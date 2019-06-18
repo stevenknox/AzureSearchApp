@@ -1,0 +1,30 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.clickable-table-row tr {
+    cursor: pointer;
+}
+
+.clickable-div {
+    cursor: pointer;
+}
+
+.modal-full-size {
+    max-width: 99vw;
+    height: 90vh;
+}
+
+.modal-full-extra-lg {
+    max-width: 70vw;
+    height: 60vh;
+}
+
+.modal-content {
+    min-height: 100% !important;
+}

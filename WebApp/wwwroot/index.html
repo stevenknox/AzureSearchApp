@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Azure Cognitive Search</title>
+<link href="/css/main.ee19b518a74208759755.css" rel="stylesheet"></head>
+
+<body>
+    <div class="row mt-5">
+        <div class="col-md-12 text-center">
+            <img src="img/Azure.png" class="logo" />
+            <h1 class=" text-muted">
+                Azure Cognitive Search
+            </h1>
+        </div>
+    </div>
+    <div class="container">
+        <br />
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8">
+                <div class="card card-sm">
+                    <div class="card-body row no-gutters align-items-center">
+                        <div class="col-auto">
+                            <i class="fas fa-search h4 text-body"></i>
+                        </div>
+                        <!--end of col-->
+                        <div class="col">
+                            <input id="tbSearch"
+                                class="form-control form-control-lg form-control-borderless @InputCssClass"
+                                type="search" placeholder="Enter Search" />
+                        </div>
+                        <!--end of col-->
+                        <div class="col-auto">
+                            <button class="btn btn-lg btn-primary" id="btnSearch">Search</button>
+                        </div>
+                        <!--end of col-->
+                    </div>
+                </div>
+            </div>
+            <!--end of col-->
+        </div>
+        <!-- <div class="alert alert-danger" role="alert" hidden="@HideError">Error</div> -->
+        <!-- <div class="alert alert-@GetSentimentText(@Average, true) mt-5" role="alert">
+            Overall this timeline is <strong>@GetSentimentText(@Average)</strong>
+        </div> -->
+        <div id="loading" class="text-center mt-5" hidden>
+            <img src="img/spinner.gif" />
+        </div>
+        <table class="table table-hover clickable-table-row mt-5" id="tblResults" hidden>
+            <thead class="table-primary">
+                <th>Id</th>
+                <th>Result</th>
+                <th>Type</th>
+                <th></th>
+            </thead>
+        </table>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-full-extra-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalHeader">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="modalImage" class="text-center">
+                        <img id="image" style="max-width: 700px;" />
+                    </div>
+                    <div id="modalDetails"></div>
+                    <div id="modalDownloading" class="text-center">
+                        <h3>Downloading File from Azure</h3>
+                        <img src="img/spinner.gif" class="mt-5 mb-5" />
+                    </div>
+                    <div id="modalVideo">
+                        <div class="row">
+                            <div class="col-md-6">
+                                    <video width="100%" height="auto" controls id="video">
+                                    </video>
+                            </div>
+                            <div class="col-md-6">
+                                <h2>Transcript</h2>
+                                <pre ID="transcript" style="overflow-y: auto;height:330px;"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="/main.ee19b518a74208759755.js"></script></body>
+
+</html>

@@ -1,0 +1,1950 @@
+{
+	"type": "FeatureCollection",
+	"features": [{
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 1,
+			"Name": "Benone Tourist Complex",
+			"Address": "Benone Avenue, Limavady, Co. Londonderry",
+			"Postcode": "BT49 9BQ",
+			"Town": "Limavady",
+			"Facility": "Tennis",
+			"Comments": "4 astroturf courts",
+			"GlobalID": "4520dd98-afaa-4829-afdf-10452b7b6338"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.869995433901436, 55.16334570333354]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 2,
+			"Name": "Portrush Recreation Grounds",
+			"Address": "Ramore Avenue, Portrush, Co. Antrim",
+			"Postcode": "BT56 8BB",
+			"Town": "Portrush",
+			"Facility": "Tennis",
+			"Comments": "12 tarmac courts",
+			"GlobalID": "18d82352-7a1e-455a-b0f7-1fc46a420b87"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.6591761372699105, 55.210174878658194]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 3,
+			"Name": "Portrush Recreation Grounds",
+			"Address": "Ramore Avenue, Portrush, Co. Antrim",
+			"Postcode": "BT56 8BB",
+			"Town": "Portrush",
+			"Facility": "Bowls",
+			"Comments": "2 bowling greens",
+			"GlobalID": "5548a4e4-68ec-4a07-9966-3f004072f6e6"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.659074213939466, 55.20979534199864]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 4,
+			"Name": "Ballintoy MUGA and Play Area",
+			"Address": "Knocksoghey Lane, Ballintoy, Co. Antrim",
+			"Postcode": "BT54 6NR",
+			"Town": "Ballintoy",
+			"Facility": "MUGA",
+			"Comments": " ",
+			"GlobalID": "1edf7c23-448c-470a-936a-4a9ccb30c87b"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.354017513830264, 55.23624802708962]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 5,
+			"Name": "Ballycastle Seafront Outdoor Gym",
+			"Address": "North Street, Ballycastle, Co. Antrim",
+			"Postcode": "BT54 6BN",
+			"Town": "Ballycastle",
+			"Facility": "Outdoor Gym",
+			"Comments": " ",
+			"GlobalID": "824074c5-6cf3-444e-959f-828465678843"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.238821575385692, 55.205065473175196]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 6,
+			"Name": "Garron Road MUGA",
+			"Address": "Garron Road, Waterfoot, Co. Antrim",
+			"Postcode": "BT44 0RB",
+			"Town": "Waterfoot",
+			"Facility": "MUGA",
+			"Comments": " ",
+			"GlobalID": "187409bc-f25e-4237-9bc8-955c8e69b41e"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.047136801663749, 55.05447476269554]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 7,
+			"Name": "Glentaisie Drive MUGA",
+			"Address": "Glentaisie Drive, Ballycastle, Co. Antrim",
+			"Postcode": "BT54 6AS",
+			"Town": "Ballycastle",
+			"Facility": "MUGA",
+			"Comments": " ",
+			"GlobalID": "09c5b0ea-6efa-4c20-83fe-f183a1f03655"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.257243638640495, 55.197522871553254]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 8,
+			"Name": "Mosside Playing Fields",
+			"Address": "Community Walk, Mosside, Ballymoney, County Antrim",
+			"Postcode": "BT53 8QD",
+			"Town": "Mosside",
+			"Facility": "Pitches",
+			"Comments": "2 Grass Pitches",
+			"GlobalID": "93218d4d-4e10-42ac-9e37-0534d08aa4f4"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.406607305710181, 55.1535852613806]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 9,
+			"Name": "Quay Road Sports Complex",
+			"Address": "Quay Road, Ballycastle, Co. Antrim",
+			"Postcode": "BT54 6BH",
+			"Town": "Ballycastle",
+			"Facility": "Pitches",
+			"Comments": "3 Grass Pitches and 1 Synthetic",
+			"GlobalID": "c9236f3e-e7d8-446f-9c65-9922aee6ed98"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.244189458993586, 55.202536516980466]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 10,
+			"Name": "Quay Road Sports Complex",
+			"Address": "Quay Road, Ballycastle, Co. Antrim",
+			"Postcode": "BT54 6BH",
+			"Town": "Ballycastle",
+			"Facility": "Pavilion",
+			"Comments": " ",
+			"GlobalID": "eeaf0881-74bd-4103-bd58-5e6d7a6f4cf5"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.24383540798768, 55.20208343428152]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 11,
+			"Name": "Ramoan Road Pitches",
+			"Address": "Ramoan Road, Ballycastle, Co. Antrim",
+			"Postcode": "BT54 6EQ",
+			"Town": "Ballycastle",
+			"Facility": "Pitches",
+			"Comments": "1 Grass Pitch",
+			"GlobalID": "6e0c2e1f-91d1-43f6-a86b-402a2ddaabb7"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.263159686581966, 55.197732734829145]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 12,
+			"Name": "Rathlin Island Outdoor Gym",
+			"Address": "Church Bay, Rathlin Island, Co. Antrim",
+			"Postcode": "BT54 6RS",
+			"Town": "Rathlin Island",
+			"Facility": "Outdoor Gym",
+			"Comments": " ",
+			"GlobalID": "40f15122-a851-4635-830d-5a34a28e8be2"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.1925329115266, 55.29302256189375]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 13,
+			"Name": "Sheskburn House Recreation Centre",
+			"Address": "7 Mary Street, Ballycastle, Co. Antrim",
+			"Postcode": "BT54 6QH",
+			"Town": "Ballycastle",
+			"Facility": "Sports Hall",
+			"Comments": " ",
+			"GlobalID": "a6e6fac8-5adf-47da-8fee-3b04ac697db0"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.238075921775888, 55.20293332044315]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 14,
+			"Name": "Ballycastle Tennis Complex",
+			"Address": "Mary Street, Ballycastle, County Antrim",
+			"Postcode": "BT54 6QJ",
+			"Town": "Ballycastle",
+			"Facility": "Tennis",
+			"Comments": "4 Grass Courts and 6 All Weather Courts",
+			"GlobalID": "144d8437-8615-481b-a589-ebf2dea2d394"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.238757203572979, 55.20421981905933]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 15,
+			"Name": "Millennium Park Outdoor Gym",
+			"Address": "Bridge Street, Bushmills, County Antrim",
+			"Postcode": "BT57 8QJ",
+			"Town": "Bushmills",
+			"Facility": "Outdoor Gym",
+			"Comments": " ",
+			"GlobalID": "1cdb70e8-f59a-448b-95a1-fdec04a529fa"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.524893787067948, 55.20470889077051]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 16,
+			"Name": "Woodvale Kick About Area",
+			"Address": "Woodvale Park, Bushmills, County Antrim",
+			"Postcode": "BT57 8QF",
+			"Town": "Bushmills",
+			"Facility": "Pitches",
+			"Comments": "1 Grass Pitch",
+			"GlobalID": "3592f21d-7881-410f-88f7-629d271195f2"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.520462778210619, 55.2053326019746]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 17,
+			"Name": "Dundarave Soccer Pitch",
+			"Address": "Dundarave Road, Bushmills, County Antrim",
+			"Postcode": "BT57 8SD",
+			"Town": "Bushmills",
+			"Facility": "Pitches",
+			"Comments": "1 Grass Pitch",
+			"GlobalID": "485d7a8e-6847-4a53-a040-2ba7656264c0"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.521331813823766, 55.2079857534394]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 18,
+			"Name": "Dundarave Pavillion",
+			"Address": "Dundarave Road, Bushmills, County Antrim",
+			"Postcode": "BT57 8SD",
+			"Town": "Bushmills",
+			"Facility": "Pavilion",
+			"Comments": " ",
+			"GlobalID": "c4ac2287-7bcc-4df9-a238-2cc643b8de22"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.522479798643328, 55.207725573471]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 19,
+			"Name": "Liscolman Kick About Area",
+			"Address": "Oakley Park, Liscolman, County Antrim",
+			"Postcode": "BT53 8DT",
+			"Town": "Liscolman",
+			"Facility": "Pitches",
+			"Comments": "1 Grass Pitch",
+			"GlobalID": "4eedf696-33a2-41d5-b380-547add8d69f8"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.454550180071295, 55.168073181472295]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 20,
+			"Name": "Dervock Recreation Ground",
+			"Address": "Knock Road, Dervock, County Antrim",
+			"Postcode": "BT53 8BB",
+			"Town": "Dervock",
+			"Facility": "Pitches",
+			"Comments": "3 Grass Pitches",
+			"GlobalID": "5c74ad67-4889-4526-b316-dc8e22cca1d8"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.472338589798389, 55.1250482750839]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 21,
+			"Name": "Dervock Recreation Ground",
+			"Address": "Knock Road, Dervock, Co. Antrim",
+			"Postcode": "BT53 8BB",
+			"Town": "Dervock",
+			"Facility": "Pavilion",
+			"Comments": " ",
+			"GlobalID": "bd0e0817-b76b-4972-b6ed-9c5361beccdf"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.471665355872648, 55.124743077185315]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 22,
+			"Name": "Dervock MUGA",
+			"Address": "Knock Road, Dervock, Co. Antrim",
+			"Postcode": "BT53 8BB",
+			"Town": "Dervock",
+			"Facility": "MUGA",
+			"Comments": " ",
+			"GlobalID": "303aa601-bb20-4205-99de-c34351db5bf7"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.471104774272905, 55.12466179279734]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 23,
+			"Name": "Dervock Recreation Grounds",
+			"Address": "Knock Road, Dervock, Co. Antrim",
+			"Postcode": "BT53 8BB",
+			"Town": "Dervock",
+			"Facility": "Sports Hall",
+			"Comments": " ",
+			"GlobalID": "cee557ad-df9a-42df-8ff4-4823a76b70de"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.471910777617718, 55.12473579166131]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 24,
+			"Name": "Rasharkin Playing Field",
+			"Address": "Main Street, Rasharkin, County Antrim",
+			"Postcode": "BT44 8PU",
+			"Town": "Rasharkin",
+			"Facility": "Pitches",
+			"Comments": "1 Grass Pitch",
+			"GlobalID": "457fc144-c568-4be7-928a-2b091aa4a07c"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.477367731630022, 54.955570919672134]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 25,
+			"Name": "Rasharkin MUGA",
+			"Address": "Main Street, Rasharkin, County Antrim",
+			"Postcode": "BT44 8PU",
+			"Town": "Rasharkin",
+			"Facility": "MUGA",
+			"Comments": " ",
+			"GlobalID": "f58848c5-75c5-4478-b971-c9fd32b812f7"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.478027555618446, 54.9559805981986]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 26,
+			"Name": "Rasharkin Pavilion",
+			"Address": "35c Main Street, Rasharkin, County Antrim",
+			"Postcode": "BT44 8PU",
+			"Town": "Rasharkin",
+			"Facility": "Pavilion",
+			"Comments": " ",
+			"GlobalID": "06095f7c-8b07-4b08-af46-ffcf8cea4619"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.478228721433072, 54.95552625489211]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 27,
+			"Name": "Dunloy Playing Fields",
+			"Address": "Tullaghans Road, Dunloy, Ballymoney, County Antrim",
+			"Postcode": "BT44 9EB",
+			"Town": "Dunloy",
+			"Facility": "Pitches",
+			"Comments": "1 Grass Pitch",
+			"GlobalID": "fcd5edda-44e2-4bc1-9e3e-487a704bf6b0"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.414263400233025, 55.01235400884533]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 28,
+			"Name": "Dunloy Pavilion",
+			"Address": "Tullaghans Road, Dunloy, Ballymoney, County Antrim",
+			"Postcode": "BT44 9EB",
+			"Town": "Dunloy",
+			"Facility": "Pavilion",
+			"Comments": " ",
+			"GlobalID": "3c96bcab-fc62-4d12-b116-808e3d840655"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.414477977315921, 55.01173881250181]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 29,
+			"Name": "Dunloy MUGA",
+			"Address": "Tullaghans Road, Dunloy, Ballymoney, County Antrim",
+			"Postcode": "Tullaghans Road, Dunloy, Ballymoney, County Antrim",
+			"Town": "Dunloy",
+			"Facility": "MUGA",
+			"Comments": " ",
+			"GlobalID": "1e94b77e-6aac-4ddb-93b7-0f424125a675"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.414043458956323, 55.01148657959898]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 30,
+			"Name": "Megaw Park Outdoor Gym",
+			"Address": "14 Charles Street, Ballymoney, Co. Antrim",
+			"Postcode": "BT53 6DZ",
+			"Town": "Ballymoney",
+			"Facility": "Outdoor Gym",
+			"Comments": " ",
+			"GlobalID": "45ad3aa9-db9c-4a84-8fa6-654fbcab9cf2"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.518976840909601, 55.074788778229276]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 31,
+			"Name": "Kings Lane Outdoor Gym",
+			"Address": "Kings Lane, Ballykelly, County Londonderry",
+			"Postcode": "BT49 9JY",
+			"Town": "Ballykelly",
+			"Facility": "Outdoor Gym",
+			"Comments": " ",
+			"GlobalID": "809f5f82-7f35-420f-a319-9c1712c081c2"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-7.008209082683584, 55.04272064707145]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 32,
+			"Name": "The Warren",
+			"Address": "Old Coach Road, Portstewart, County Londonderry",
+			"Postcode": "BT55 7HD",
+			"Town": "Portstewart",
+			"Facility": "Bowls",
+			"Comments": "2 bowling greens",
+			"GlobalID": "ef3ae00f-4fff-4777-a02a-9150fcb90ca7"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.709041524130913, 55.185293546877816]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 33,
+			"Name": "The Warren",
+			"Address": "Old Coach Road, Portstewart, Co. Londonderry",
+			"Postcode": "BT55 7HD",
+			"Town": "Portstewart",
+			"Facility": "Tennis",
+			"Comments": "2 tarmac courts",
+			"GlobalID": "cf16cc7e-2564-429a-ace1-e75311b19f4d"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.7089395996979935, 55.18483108016213]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 34,
+			"Name": "The Warren",
+			"Address": "Old Coach Road, Portstewart, Co. Londonderry",
+			"Postcode": "BT55 7HD",
+			"Town": "Portstewart",
+			"Facility": "Pavilion",
+			"Comments": " ",
+			"GlobalID": "207ce289-6652-4c9e-8a8e-2453cad02b64"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.709438491820493, 55.18571466246414]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 35,
+			"Name": "The Warren",
+			"Address": "Old Coach Road, Portstewart, Co. Londonderry",
+			"Postcode": "BT55 7HD",
+			"Town": "Portstewart",
+			"Facility": "Pitches",
+			"Comments": "1 Grass Pitch",
+			"GlobalID": "49e26713-a3b1-4406-b44d-d5b55f246ba3"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.710715223343529, 55.185365519933]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 36,
+			"Name": "Brook Street Bowling Green",
+			"Address": "Lodge Road, Coleraine, Co. Londonderry",
+			"Postcode": "BT52 1ND",
+			"Town": "Coleraine",
+			"Facility": "Bowls",
+			"Comments": "1 bowling green",
+			"GlobalID": "e0434ed4-9c0f-4a75-b18f-70c38560e383"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.662827063473143, 55.12874248227798]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 37,
+			"Name": "Kilrea Sports Complex",
+			"Address": "Craiglea Gardens, Kilrea, County Londonderry",
+			"Postcode": "BT51 5QZ",
+			"Town": "Kilrea",
+			"Facility": "Bowls",
+			"Comments": "1 bowling green",
+			"GlobalID": "9da6c99d-fb41-4858-8c29-73e36ef753d5"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.558368433436449, 54.953999737543306]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 38,
+			"Name": "Roe Mill Tennis Courts",
+			"Address": "Roe Mill Road, Limavady, County Londonderry",
+			"Postcode": "BT49 9BQ",
+			"Town": "Limavady",
+			"Facility": "Tennis",
+			"Comments": "2 tarmac courts",
+			"GlobalID": "9f417e2b-5e41-4b79-9227-9c1314f1b3f6"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.953291523917752, 55.043342091417465]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 39,
+			"Name": " ",
+			"Address": " ",
+			"Postcode": " ",
+			"Town": " ",
+			"Facility": "Pavilion",
+			"Comments": " ",
+			"GlobalID": "0a5cb5a0-c016-4322-90dc-a02079dbab9f"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.953130591630483, 55.04397140120997]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 40,
+			"Name": "Ballybogey MUGA",
+			"Address": "16 Wheatfield Park, Ballybogey, County Antrim",
+			"Postcode": "BT53 6NT",
+			"Town": "Ballybogey",
+			"Facility": "MUGA",
+			"Comments": " ",
+			"GlobalID": "fa34a5ff-92c5-4a54-a491-f7dd1a421c21"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.558323965019421, 55.1305470111504]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 41,
+			"Name": "Fulton Recreation Grounds",
+			"Address": "Balnamore Road, Balnamore, Ballymoney, Co. Antrim",
+			"Postcode": "BT53 7PJ",
+			"Town": "Balnamore",
+			"Facility": "Pitches",
+			"Comments": "1 Grass Pitch",
+			"GlobalID": "636c3f62-d9c8-4404-bde3-1203755f16a3"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.5641777530826655, 55.06669493916959]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 42,
+			"Name": "Fulton Recreation Grounds",
+			"Address": "Balnamore Road, Balnamore, Ballymoney, County Antr",
+			"Postcode": "BT53 7PJ",
+			"Town": "Balnamore",
+			"Facility": "Sports Hall",
+			"Comments": " ",
+			"GlobalID": "4219002f-6965-435d-8513-9353959384bb"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.564539852089613, 55.066060609886684]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 43,
+			"Name": "Fulton Recreation Grounds",
+			"Address": "Balnamore Road, Balnamore, Ballymoney, Co. Antrim",
+			"Postcode": "BT53 7PJ",
+			"Town": "Balnamore",
+			"Facility": "Pavilion",
+			"Comments": " ",
+			"GlobalID": "44c46ea7-de4e-4752-9940-38c1ddba82df"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.564325274965923, 55.06615046058599]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 44,
+			"Name": "Dunaghy Playing Field",
+			"Address": "Landhead Road, Dunaghy, County Antrim",
+			"Postcode": "BT53 7GW",
+			"Town": "Dunaghy",
+			"Facility": "Pitches",
+			"Comments": "1 Grass Pitch",
+			"GlobalID": "b0b81ffc-a57d-40a8-a72c-bca106d503c6"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.4730976676935414, 55.0716290590306]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 45,
+			"Name": "Dunaghy Pavilion",
+			"Address": "Landhead Road, Dunaghy, Co. Antrim",
+			"Postcode": "BT53 7GW",
+			"Town": "Dunaghy",
+			"Facility": "Pavilion",
+			"Comments": " ",
+			"GlobalID": "4447d248-3002-46e0-b99c-c3c03d83d053"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.472427115139121, 55.07140791713683]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 46,
+			"Name": "Riada Playing Fields",
+			"Address": "33 Garryduff Road, Ballymoney, Co. Antrim",
+			"Postcode": "BT53 7DB",
+			"Town": "Ballymoney",
+			"Facility": "Pitches",
+			"Comments": "6 Grass Pitches, 1 All Weather Pitch and 1 Synthetic Pitch",
+			"GlobalID": "f5b14c10-198a-4e2d-ade7-b929799264b5"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.498187051845645, 55.061727151159026]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 47,
+			"Name": "Riada Pavilion",
+			"Address": "33 Garryduff Road, Ballymoney, Co. Antrim",
+			"Postcode": "BT53 7DB",
+			"Town": "Ballymoney",
+			"Facility": "Pavilion",
+			"Comments": " ",
+			"GlobalID": "495889f3-90c8-4212-a993-51b3e4c58ba3"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.498900518233604, 55.0619867483253]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 48,
+			"Name": "Riada Tennis Courts",
+			"Address": "33 Garryduff Road, Ballymoney, Co. Antrim",
+			"Postcode": "BT53 7GW",
+			"Town": "Ballymoney",
+			"Facility": "Tennis",
+			"Comments": "2 all weather courts",
+			"GlobalID": "f9d00eeb-5d0d-4b09-87ce-242d6df0f0ba"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.4957408768904585, 55.06208198519564]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 49,
+			"Name": "Stranocum MUGA",
+			"Address": "Ballinlea Road, Stranocum, County Antrim",
+			"Postcode": "BT54 6JL",
+			"Town": "Stranocum",
+			"Facility": "MUGA",
+			"Comments": " ",
+			"GlobalID": "d53ca8e8-e268-4163-bfae-13ff13d94342"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.42052021361877, 55.10718086071727]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 50,
+			"Name": "Macfin MUGA",
+			"Address": "Macfin Road, Ballymoney, Co. Antrim",
+			"Postcode": "BT53 6QU",
+			"Town": "Ballymoney",
+			"Facility": "MUGA",
+			"Comments": " ",
+			"GlobalID": "b8fea1b4-bd96-4824-9a55-686f738be714"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.586250526307847, 55.0802557189059]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 51,
+			"Name": "Megaw Park Tennis Courts",
+			"Address": "14 Charles Street, Ballymoney, County Antrim",
+			"Postcode": "BT53 6DZ",
+			"Town": "Ballymoney",
+			"Facility": "Tennis",
+			"Comments": "3 tarmac courts",
+			"GlobalID": "670e9f19-a3e7-4af3-bad0-63d2d18c16a9"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.51939914828274, 55.075104210949455]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 52,
+			"Name": "Megaw Park Pavilion",
+			"Address": "14 Charles Street, Ballymoney, Co. Antrim",
+			"Postcode": "BT53 6DZ",
+			"Town": "Ballymoney",
+			"Facility": "Pavilion",
+			"Comments": " ",
+			"GlobalID": "31bbd9c9-2665-4693-a0f0-41f22472a12d"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.518916350865392, 55.07505507316061]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 53,
+			"Name": "Megaw Park Playing Fields",
+			"Address": "14 Charles Street, Ballymoney, Co. Antrim",
+			"Postcode": "BT53 6DZ",
+			"Town": "Ballymoney",
+			"Facility": "Pitches",
+			"Comments": "2 Grass Pitches",
+			"GlobalID": "b49ab7c7-39b4-4d53-81e4-4ee1ecd34b9b"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.518916350381926, 55.07574300345009]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 54,
+			"Name": "Megaw Park MUGA",
+			"Address": "14 Charles Street, Ballymoney, Co. Antrim",
+			"Postcode": "BT53 6DZ",
+			"Town": " ",
+			"Facility": "MUGA",
+			"Comments": " ",
+			"GlobalID": "9eecb497-c3e4-4076-91cf-8ff9b5653473"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.5178434669144085, 55.07534068858256]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 55,
+			"Name": "Macosquin Playing Fields",
+			"Address": "Farranseer Park, Macosquin, County Londonderry",
+			"Postcode": "BT51 4NA",
+			"Town": "Macosquin",
+			"Facility": "Pitches",
+			"Comments": "1 Grass Pitch",
+			"GlobalID": "af374b6a-d2b1-426e-af3d-b9c39831ba0c"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.708655815907005, 55.09962743064042]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 56,
+			"Name": "Macosquin MUGA",
+			"Address": "Ramsey Park, Macosquin, County Londonderry",
+			"Postcode": "BT51 4NF",
+			"Town": "Macosquin",
+			"Facility": "MUGA",
+			"Comments": " ",
+			"GlobalID": "63af30e0-6f31-43c1-9c5a-598a396741b4"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.711627703989349, 55.100649480452574]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 57,
+			"Name": "Articlave Playing Fields Pavilion",
+			"Address": "Rockmount Gardens, Articlave, County Londonderry",
+			"Postcode": "BT51 4UU",
+			"Town": "Articlave",
+			"Facility": "Pavilion",
+			"Comments": " ",
+			"GlobalID": "104bc26c-80aa-495f-b8df-6d34d50016aa"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.769010884158789, 55.14823484654122]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 58,
+			"Name": "Articlave MUGA",
+			"Address": "Rockmount Gardens, Articlave, County Londonderry",
+			"Postcode": "BT51 4UU",
+			"Town": "Articlave",
+			"Facility": "MUGA",
+			"Comments": " ",
+			"GlobalID": "48d4a9b5-fd0f-4bad-a6c6-90f9a55325c8"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.769713623098596, 55.14814594646479]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 59,
+			"Name": "Articlave Playing Fields",
+			"Address": "Rockmount Gardens, Articlave, County Londonderry",
+			"Postcode": "BT51 4UU",
+			"Town": "Articlave",
+			"Facility": "Pitches",
+			"Comments": "1 Grass Pitch",
+			"GlobalID": "69fc2c22-d0c0-45cb-8646-b3efcd6c7905"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.768876773908981, 55.14887860100248]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 60,
+			"Name": "Andersons Park Pitches",
+			"Address": "Millburn Road, Coleraine, Co. Londonderry",
+			"Postcode": "BT52 1ED",
+			"Town": "Coleraine",
+			"Facility": "Pitches",
+			"Comments": "1 Grass Pitch",
+			"GlobalID": "eeecf802-1c3a-4b33-9098-f28a5628fc83"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.672058869087586, 55.133854785828646]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 61,
+			"Name": "Andersons Park Pavilion",
+			"Address": "Millburn Road, Coleraine, Co. Londonderry",
+			"Postcode": "BT52 1ED",
+			"Town": "Coleraine",
+			"Facility": "Pavilion",
+			"Comments": " ",
+			"GlobalID": "99a60116-ac1e-4e9d-94d8-f9ae567ade88"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.672080327114854, 55.134474239876575]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 62,
+			"Name": "Andersons Park Tennis Pavilion",
+			"Address": "Millburn Road, Coleraine, Co. Londonderry",
+			"Postcode": "BT52 1ED",
+			"Town": "Coleraine",
+			"Facility": "Pavilion",
+			"Comments": " ",
+			"GlobalID": "f9f7bc48-2d04-4690-96b0-b163034136f6"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.671157648144614, 55.13511515044412]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 63,
+			"Name": "Andersons Park Tennis Courts",
+			"Address": "Millburn Road, Coleraine, Co. Londonderry",
+			"Postcode": "BT52 1ED",
+			"Town": "Coleraine",
+			"Facility": "Tennis",
+			"Comments": "4 astroturf courts",
+			"GlobalID": "5800ddb4-05a4-4e02-865b-7e3f182a7134"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.670717764790322, 55.134937291501664]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 64,
+			"Name": "Ballysally Pavilion",
+			"Address": "Ballysally Road, Coleraine, Co. Londonderry",
+			"Postcode": "BT52 2QA",
+			"Town": "Coleraine",
+			"Facility": "Pavilion",
+			"Comments": " ",
+			"GlobalID": "2946793c-2721-4e95-ba3f-6d7cb8d36ed0"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.660317210492766, 55.14925805501314]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 65,
+			"Name": "Ballysally Football Pitches",
+			"Address": "Ballysally Road, Coleraine, Co. Londonderry",
+			"Postcode": "BT52 2QA",
+			"Town": "Coleraine",
+			"Facility": "Pitches",
+			"Comments": "5 Grass Pitches",
+			"GlobalID": "88a763d7-fb65-4c93-8ebe-0aa5f359aabd"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.661856797954255, 55.149438915752114]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 66,
+			"Name": "Ballysally MUGA",
+			"Address": "Ballysally Road, Coleraine, Co. Londonderry",
+			"Postcode": "BT52 2QA",
+			"Town": "Coleraine",
+			"Facility": "MUGA",
+			"Comments": " ",
+			"GlobalID": "ae2cdcf2-76c9-4d82-87d5-f54ec3a2277c"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.662918953776891, 55.14825564107999]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 67,
+			"Name": "Brook Street Bowling Pavilion",
+			"Address": "Lodge Road, Coleraine, Co. Londonderry",
+			"Postcode": "BT52 1ND",
+			"Town": "Coleraine",
+			"Facility": "Pavilion",
+			"Comments": " ",
+			"GlobalID": "0450c3a8-a7cc-4dfd-b55e-6474d8f08a0e"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.663093409729093, 55.12864796220988]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 68,
+			"Name": "Coleraine Showgrounds Portable Changing Units",
+			"Address": "Ballycastle Road, Coleraine, Co. Londonderry",
+			"Postcode": "BT52 2DY",
+			"Town": "Coleraine",
+			"Facility": "Pavilion",
+			"Comments": " ",
+			"GlobalID": "7f02ae0f-a347-432b-b7a3-0d5cdf89e4a6"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.660766412028153, 55.13357041183938]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 69,
+			"Name": "West Bann Development Centre Playing Fields",
+			"Address": "The Ropewalk, Coleraine, Co. Londonderry",
+			"Postcode": "BT51 3TP",
+			"Town": "Coleraine",
+			"Facility": "Pitches",
+			"Comments": "1 Grass Pitch",
+			"GlobalID": "2ec85950-f531-4f60-8292-e4007c7ab878"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.682879138891254, 55.12550810625889]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 70,
+			"Name": "West Bann Development Centre MUGA",
+			"Address": "The Ropewalk, Coleraine, Co. Londonderry",
+			"Postcode": "BT51 3TP",
+			"Town": "Coleraine",
+			"Facility": "MUGA",
+			"Comments": " ",
+			"GlobalID": "dcf2d757-0796-496a-853d-3eec4c12f9f9"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.683297562118845, 55.12586697555416]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 71,
+			"Name": "The Crescent Pavilion",
+			"Address": "The Crescent, Coleraine, Co. Londonderry",
+			"Postcode": "BT52 2BS",
+			"Town": "Coleraine",
+			"Facility": "Pavilion",
+			"Comments": " ",
+			"GlobalID": "4540ae88-c763-4917-b53f-6d68f7cfe078"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.658889244355619, 55.13572236501942]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 72,
+			"Name": "The Crescent Playing Fields",
+			"Address": "The Crescent, Coleraine, Co. Londonderry",
+			"Postcode": "BT52 2BS",
+			"Town": "Coleraine",
+			"Facility": "Pitches",
+			"Comments": "5 Grass Pitches and 1 All Weather Pitch",
+			"GlobalID": "a9285201-9061-490d-a6d6-b3be4b456b03"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.657988022718488, 55.13616393603453]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 73,
+			"Name": "Glenmanus Playing Fields",
+			"Address": "Coleraine Road, Portrush, Co. Antrim",
+			"Postcode": "BT56 8HU",
+			"Town": "Portrush",
+			"Facility": "Pitches",
+			"Comments": "1 Grass Pitch",
+			"GlobalID": "9cb50373-8ac7-46f1-9d24-069c2dac414f"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.657546784636033, 55.188939211629865]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 74,
+			"Name": "Millburn Playing Fields",
+			"Address": "8 Linden Avenue, Coleraine, Co. Londonderry",
+			"Postcode": "BT52 2AN",
+			"Town": "Coleraine",
+			"Facility": "Pitches",
+			"Comments": "1 All Weather Pitch",
+			"GlobalID": "95c452a6-c460-4e0f-86f3-0ec7b7a52692"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.664090856254458, 55.13853125398074]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 75,
+			"Name": "Millburn MUGA",
+			"Address": "8 Linden Avenue, Coleraine, Co. Londonderry",
+			"Postcode": "BT52 2AN",
+			"Town": "Coleraine",
+			"Facility": "MUGA",
+			"Comments": " ",
+			"GlobalID": "61630c99-3980-4f9e-99d8-0b35388d7969"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.663146718421061, 55.13920582772672]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 76,
+			"Name": "Parker Avenue Pavilion",
+			"Address": "53 Parker Avenue, Portrush, Co. Antrim",
+			"Postcode": "BT56 8JZ",
+			"Town": "Portrush",
+			"Facility": "Pavilion",
+			"Comments": " ",
+			"GlobalID": "e47d4ff2-071f-47ae-b87b-2e357449a69c"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.646438923945584, 55.198225445374916]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 77,
+			"Name": "Parker Avenue Playing Fields",
+			"Address": "53 Parker Avenue, Portrush, Co. Antrim",
+			"Postcode": "BT56 8JZ",
+			"Town": "Portrush",
+			"Facility": "Pitches",
+			"Comments": "1 Grass Pitch",
+			"GlobalID": "050babc8-c637-452e-8407-0545f2bf67a2"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.64577255628745, 55.198617339124134]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 78,
+			"Name": "Portballintrae Tennis Courts",
+			"Address": "Lisnaduff Avenue, Portballintrae, Co. Antrim",
+			"Postcode": "BT57 8RU",
+			"Town": "Portballintrae",
+			"Facility": "Tennis",
+			"Comments": "1 tarmac court",
+			"GlobalID": "681f217e-e94c-44fd-8847-564719b3dbc5"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.541113248815568, 55.21841490432937]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 79,
+			"Name": "Portstewart Football Club Pavilion",
+			"Address": "St Johns Close, Portstewart, Co. Londonderry",
+			"Postcode": "BT55 7HJ",
+			"Town": "Portstewart",
+			"Facility": "Pavilion",
+			"Comments": " ",
+			"GlobalID": "2ec2cfa5-68f3-4520-942d-35dad0a5c845"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.711382282876656, 55.180494198017016]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 80,
+			"Name": "Portstewart Football Club Playing Field",
+			"Address": "St Johns Close, Portstewart, Co. Londonderry",
+			"Postcode": "BT55 7HJ",
+			"Town": "Portstewart",
+			"Facility": "Pitches",
+			"Comments": "1 Grass Pitch",
+			"GlobalID": "42d7069d-e049-44b5-a95c-9b7ca2f72105"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.711875808317847, 55.18079437533044]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 81,
+			"Name": "Rugby Avenue Pavilion",
+			"Address": "Rugby Avenue, Coleraine, Co. Londonderry",
+			"Postcode": "BT52 1JL",
+			"Town": "Coleraine",
+			"Facility": "Pavilion",
+			"Comments": " ",
+			"GlobalID": "5d84a445-3138-4854-ac04-ea7fa3eaeaaa"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.651869005516339, 55.121335541409756]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 82,
+			"Name": "Rugby Avenue Playing Fields",
+			"Address": "Rugby Avenue, Coleraine, Co. Londonderry",
+			"Postcode": "BT52 1JL",
+			"Town": "Coleraine",
+			"Facility": "Pitches",
+			"Comments": "5 Grass Pitches, 2 Syntheic Pitches and 1 All Weather Pitch",
+			"GlobalID": "da150764-0bcf-4262-a77d-11445fa41898"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.652126497826039, 55.120255734875]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 83,
+			"Name": "Windyhall Pavilion",
+			"Address": "Tullans Park, Coleraine, Co. Londonderry",
+			"Postcode": "BT52 1TT",
+			"Town": "Coleraine",
+			"Facility": "Pavilion",
+			"Comments": " ",
+			"GlobalID": "1ca47939-a7bd-459e-9bee-19fcc33818cd"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.635595072918499, 55.119170399820675]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 84,
+			"Name": "Windyhall Playing Field",
+			"Address": "Tullans Park, Coleraine, Co. Londonderry",
+			"Postcode": "BT52 1TT",
+			"Town": "Coleraine",
+			"Facility": "Pitches",
+			"Comments": "1 Grass Pitch",
+			"GlobalID": "e082fcf2-15df-41bc-91bc-ac60a0372afb"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.63530539353773, 55.11863967437188]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 85,
+			"Name": "Windyhall MUGA",
+			"Address": "Tullans Park, Coleraine, Co. Londonderry",
+			"Postcode": "BT52 1TT",
+			"Town": "Coleraine",
+			"Facility": "MUGA",
+			"Comments": " ",
+			"GlobalID": "125b5352-fcf5-4e57-b5d8-31956f504525"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.634854783304932, 55.11921334896568]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 86,
+			"Name": "Jim Watts Centre Pavilion",
+			"Address": "Kinard Park, Fort Road, Garvagh, Co. Londonderry",
+			"Postcode": "BT51 5NQ",
+			"Town": "Garvagh",
+			"Facility": "Pavilion",
+			"Comments": " ",
+			"GlobalID": "2e9e588c-a0d0-4f46-a62c-8090fc8504e8"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.686460625737335, 54.97916018849819]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 87,
+			"Name": "Jim Watt Sports Centre Playing Fields",
+			"Address": "Kinard Park, Fort Road, Garvagh, Co. Londonderry",
+			"Postcode": "BT51 5NQ",
+			"Town": "Garvagh",
+			"Facility": "Pitches",
+			"Comments": "2 Grass Pitchs,",
+			"GlobalID": "6e901455-ad66-4305-842c-f052aa320828"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.686042201468931, 54.97970815740731]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 88,
+			"Name": "Jim Watt Sports Centre MUGA",
+			"Address": "Kinard Park, Fort Road, Garvagh, Co. Londonderry",
+			"Postcode": "BT51 5NQ",
+			"Town": "Garvagh",
+			"Facility": "MUGA",
+			"Comments": " ",
+			"GlobalID": "d6ea5cd2-fda0-4e70-aa0b-2cf2466f4dd7"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.686380160526546, 54.97894161418937]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 89,
+			"Name": "Jim Watt Sports Centre",
+			"Address": "Kinard Park, Fort Road, Garvagh, Co. Londonderry",
+			"Postcode": "BT51 5NQ",
+			"Town": "Garvagh",
+			"Facility": "Sports Hall",
+			"Comments": " ",
+			"GlobalID": "beab9abe-b71f-45ea-9beb-923664fb1b2d"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.684996140672444, 54.978778451779455]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 90,
+			"Name": "Jim Watt Sports Centre",
+			"Address": "Kinard Park, Fort Road, Garvagh, Co. Londonderry",
+			"Postcode": "BT51 5QZ",
+			"Town": "Garvagh",
+			"Facility": "Fitness Suite",
+			"Comments": " ",
+			"GlobalID": "2d659367-e15e-464f-a0aa-dd9308d9b541"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.6853609197416715, 54.978775373320815]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 91,
+			"Name": "Kilrea Sports Centre",
+			"Address": "Craiglea Gardens, Kilrea, Co. Londonderry",
+			"Postcode": "BT51 5QZ",
+			"Town": "Kilrea",
+			"Facility": "Sports Hall",
+			"Comments": " ",
+			"GlobalID": "be89e85d-e0b7-43c6-b942-af2778e212c1"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.558729275194108, 54.95355600512197]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 92,
+			"Name": "Kilrea Sports Centre Pavilion",
+			"Address": "Craiglea Gardens, Kilrea, Co. Londonderry",
+			"Postcode": "BT51 5QZ",
+			"Town": "Kilrea",
+			"Facility": "Pavilion",
+			"Comments": " ",
+			"GlobalID": "443e0677-dce2-40c7-bd7a-1fde750932b2"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.558348401312867, 54.9537654767882]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 93,
+			"Name": "Kilrea Sports Centre MUGA",
+			"Address": "Craiglea Gardens, Kilrea, Co. Londonderry",
+			"Postcode": "BT51 5QZ",
+			"Town": "Kilrea",
+			"Facility": "MUGA",
+			"Comments": " ",
+			"GlobalID": "e3194628-b21a-4e01-943f-f7e11074da06"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.5589974959698445, 54.95265649960999]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 94,
+			"Name": "Kilrea Sports Centre Playing Fields",
+			"Address": "Craiglea Gardens, Kilrea, Co. Londonderry",
+			"Postcode": "BT51 5QZ",
+			"Town": "Kilrea",
+			"Facility": "Pitches",
+			"Comments": "1 Grass Pitch",
+			"GlobalID": "5a052727-5fa9-41bb-806f-130fd621e63a"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.5582893920929495, 54.95270886897706]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 95,
+			"Name": "Peter Thompson Hall Pavilion",
+			"Address": "2a Circular Road, Castlerock, Co. Londonderry",
+			"Postcode": "Bt51 4XA",
+			"Town": "Castlerock",
+			"Facility": "Pavilion",
+			"Comments": " ",
+			"GlobalID": "b558f983-13ec-435c-9ac6-a32b01f3ec12"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.7893848755349895, 55.16530155387185]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 96,
+			"Name": "Peter Thompson Hall Playing Fields",
+			"Address": "2a Circular Road, Castlerock, Co. Londonderry",
+			"Postcode": "BT51 4XA",
+			"Town": "Castlerock",
+			"Facility": "Pitches",
+			"Comments": "2 Grass Pitches",
+			"GlobalID": "1de6d0bd-0bf0-48f1-bc0a-fa195f66c4b5"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.788955721943686, 55.165083993922615]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 97,
+			"Name": "Peter Thompson Hall Bowling Green",
+			"Address": "2a Circular Road, Castlerock, Co. Londonderry",
+			"Postcode": "BT51 4XA",
+			"Town": "Castlerock",
+			"Facility": "Bowls",
+			"Comments": "1 Bowling Green",
+			"GlobalID": "87384b2e-0699-4466-8b31-6242d542ba78"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.790001782506928, 55.165316874971154]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 98,
+			"Name": "Peter Thompson Hall Tennis Courts",
+			"Address": "2a Circular Road, Castlerock, Co. Londonderry",
+			"Postcode": "BT51 4XA",
+			"Town": "Castlerock",
+			"Facility": "Tennis",
+			"Comments": "2 tarmac courts",
+			"GlobalID": "cba8be0b-8913-4ded-a723-59ed967e802b"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.789953503374516, 55.165816337729126]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 99,
+			"Name": "Peter Thompson Hall",
+			"Address": "2a Circular Road, Castlerock, Co. Londonderry",
+			"Postcode": "BT51 4XA",
+			"Town": "Castlerock",
+			"Facility": "Sports Hall",
+			"Comments": " ",
+			"GlobalID": "d5abd74b-34b5-4f44-b38c-eb4708bbdaae"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.789374145195252, 55.16555281860277]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 100,
+			"Name": "Kings Lane Playing Fields",
+			"Address": "Kings Lane, Ballykelly, Co. Londonderry",
+			"Postcode": "BT49 9JY",
+			"Town": "Ballykelly",
+			"Facility": "Pitches",
+			"Comments": "2 Grass Pitches",
+			"GlobalID": "b9354c9c-a6af-4ad3-9fbe-ca0e7fa26757"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-7.006883589985619, 55.042408611943394]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 101,
+			"Name": "Kings Lane Pavilion",
+			"Address": "Kings Lane, Ballykelly, Co. Londonderry",
+			"Postcode": "BT49 9JY",
+			"Town": "Ballykelly",
+			"Facility": "Pavilion",
+			"Comments": " ",
+			"GlobalID": "22aec407-5196-4066-a0dd-0ff0bbb7ef55"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-7.00619694370057, 55.04186764613378]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 102,
+			"Name": "Burnfoot Pavilion",
+			"Address": "Drumrane Road, Burnfoot, Co. Londonderry",
+			"Postcode": "BT47 4RG",
+			"Town": "Burnfoot",
+			"Facility": "Pavilion",
+			"Comments": " ",
+			"GlobalID": "3f092c7a-3566-4eaf-8df4-a95617eded42"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.937659821866448, 54.96476654068214]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 103,
+			"Name": "Burnfoot Playing Fields",
+			"Address": "Drumrane Road, Burnfoot, Co. Londonderry",
+			"Postcode": "BT47 4RG",
+			"Town": "Burnfoot",
+			"Facility": "Pitches",
+			"Comments": "1 Grass Pitch and 1 All Weather Pitch",
+			"GlobalID": "a6713a6f-fd39-4ec5-b295-cf8dc93a0edc"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.937777839026189, 54.96422452674552]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 104,
+			"Name": "Garvagh Road Playing Fields",
+			"Address": "Garvagh Road, Dungiven, Co. Londonderry",
+			"Postcode": "BT49 0PR",
+			"Town": "Dungiven",
+			"Facility": "Pitches",
+			"Comments": "1 Grass Pitch",
+			"GlobalID": "23ebc967-a036-48d1-9e79-0c6fa67e81e6"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.917675779644195, 54.931331843940235]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 105,
+			"Name": "Dungiven Sports Centre",
+			"Address": "3 Chapel Road, Dungiven, Co. Londonderry",
+			"Postcode": "BT47 4RS",
+			"Town": "Dungiven",
+			"Facility": "Sports Hall",
+			"Comments": " ",
+			"GlobalID": "e81fb647-ed8a-4df1-8eea-732ee726df07"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.919784136994767, 54.923692106650115]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 106,
+			"Name": "Dungiven Sports Pavilion",
+			"Address": "3 Chapel Road, Dungiven, Co. Londonderry",
+			"Postcode": "BT47 4RS",
+			"Town": "Dungiven",
+			"Facility": "Fitness Suite",
+			"Comments": " ",
+			"GlobalID": "c7dd868c-e2da-4e31-8e36-938e3b7c8e22"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.919596382629748, 54.92351022370529]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 107,
+			"Name": "Dungiven Sports",
+			"Address": " ",
+			"Postcode": " ",
+			"Town": " ",
+			"Facility": "Pitches",
+			"Comments": " ",
+			"GlobalID": "19281942-076c-4a44-97ef-8165d7258bb7"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.920181104793115, 54.924173013209455]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 108,
+			"Name": "Dungiven Sports Centre Playing Fields",
+			"Address": "3 Chapel Road, Dungiven, Co. Londonderry",
+			"Postcode": "BT47 4SX",
+			"Town": "Dungiven",
+			"Facility": "Pitches",
+			"Comments": "1 Synthetic",
+			"GlobalID": "feaa2831-eed4-4712-84f1-208b70c52b1e"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.920191833565194, 54.92417609607039]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 109,
+			"Name": "Dungiven Sports Centre Bowling Green",
+			"Address": "3 Chapel Road, Dungiven, Co. Londonderry",
+			"Postcode": "BT47 4RS",
+			"Town": "Dungiven",
+			"Facility": "Bowls",
+			"Comments": "1 bowling green",
+			"GlobalID": "be7e2cdd-6446-479e-8067-8b0443dafc9a"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.91977877221086, 54.92441346441653]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 110,
+			"Name": "Curragh Road Pavilion",
+			"Address": "Curragh Road, Dungiven, Co. Londonderry",
+			"Postcode": "BT47 4SX",
+			"Town": "Dungiven",
+			"Facility": "Pavilion",
+			"Comments": " ",
+			"GlobalID": "576ca43e-c75d-439a-995b-846a5f556d31"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.912387090748539, 54.92335406124546]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 111,
+			"Name": "Curragh Road Playing Fields",
+			"Address": "Curragh Road, Dungiven, Co. Londonderry",
+			"Postcode": "BT47 4SX",
+			"Town": "Dungiven",
+			"Facility": "Pitches",
+			"Comments": "1 Grass Pitch and 1 All Weather Pitch",
+			"GlobalID": "09fe759c-dc38-4d5a-bfc5-300b9a7fb7d2"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.911845283345754, 54.92433437293135]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 112,
+			"Name": "Roe Mill Recreation Grounds",
+			"Address": "Roe Mill Road, Limavady, County Londonderry",
+			"Postcode": "BT49 9BQ",
+			"Town": "Limavady",
+			"Facility": "Pitches",
+			"Comments": "4 Grass Pitches and 1 All Weather Pitch",
+			"GlobalID": "745550db-d51e-4232-9a67-227dbd53949d"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.954885011504635, 55.04345353746303]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 113,
+			"Name": "Scroggy Road Pavilion",
+			"Address": "Scroggy Road, Limavady, Co. Londonderry",
+			"Postcode": "BT49 0NA",
+			"Town": "Limavady",
+			"Facility": "Pavilion",
+			"Comments": " ",
+			"GlobalID": "64b18795-6df9-4ba2-a53b-db8eec7c7035"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.940318733287367, 55.046950346357605]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 114,
+			"Name": "Scroggy Road Playing Fields",
+			"Address": "Scroggy Road, Limavady, Co. Londonderry",
+			"Postcode": "BT49 0NA",
+			"Town": "Limavady",
+			"Facility": "Pitches",
+			"Comments": "1 Grass Pitch and 1 Synthetic Pitch",
+			"GlobalID": "9b3013ec-51ed-41fd-a6b1-6b30b8c31b25"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.941756398243933, 55.04642173501432]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 115,
+			"Name": "Feeny Playing Field",
+			"Address": "Feeny Road, Feeny, Co. Londonderry",
+			"Postcode": "BT47 4SU",
+			"Town": "Feeny",
+			"Facility": "Pitches",
+			"Comments": "1 Grass Pitch",
+			"GlobalID": "5903b472-59f3-47ac-934e-7088b6ba481d"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-7.017415472514398, 54.89378546251355]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 116,
+			"Name": "Drumsurn Pavilion",
+			"Address": "Beech Road, Drumsurn, Co. Londonerry",
+			"Postcode": "BT48 0PR",
+			"Town": "Drumsurn",
+			"Facility": "Pavilion",
+			"Comments": " ",
+			"GlobalID": "ee9974ca-53aa-4435-8f62-14146f626935"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.873945153831427, 54.99730678041737]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 117,
+			"Name": "Drumsurn Playing Fields",
+			"Address": "Beech Road, Drumsurn, Co. Londonderry",
+			"Postcode": "BT49 0PR",
+			"Town": "Drumsurn",
+			"Facility": "Pitches",
+			"Comments": "1 Grass Pitch",
+			"GlobalID": "31d2a1b3-f457-4463-bc68-1122c87eec13"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.87310830441662, 54.997556025356936]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 118,
+			"Name": "Glebeside Playing Fields",
+			"Address": "Alexandra Avenue, Ballymoney, Co. Antrim",
+			"Postcode": "BT53 6ET",
+			"Town": "Ballymoney",
+			"Facility": "Pitches",
+			"Comments": "1 Grass Pitch",
+			"GlobalID": "854eb79b-9524-4121-a570-c2f2df180ca5"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.50872509265153, 55.07425311730642]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 119,
+			"Name": "Glebeside MUGA",
+			"Address": "Alexandra Avenue, Ballymoney, Co. Antrim",
+			"Postcode": "BT53 6ET",
+			"Town": "Ballymoney",
+			"Facility": "MUGA",
+			"Comments": " ",
+			"GlobalID": "78ddb848-154f-4416-a6c7-bad5b0d841b7"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.508526608048801, 55.0747752195273]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 120,
+			"Name": "Glebeside Pavilion",
+			"Address": "Alexandra Avenue, Ballymoney, Co. Antrim",
+			"Postcode": "BT53 6ET",
+			"Town": "Ballymoney",
+			"Facility": "Pavilion",
+			"Comments": " ",
+			"GlobalID": "04c37fe3-3ca3-4393-baac-7bbc75142d3d"
+		},
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-6.508199378833425, 55.07462166006804]
+		}
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 121,
+			"Name": " ",
+			"Address": " ",
+			"Postcode": " ",
+			"Town": " ",
+			"Facility": "Sports Hall",
+			"Comments": " ",
+			"GlobalID": "e01e8216-65a1-49f8-bd88-702be2c15098"
+		},
+		"geometry": null
+	}, {
+		"type": "Feature",
+		"properties": {
+			"OBJECTID": 122,
+			"Name": " ",
+			"Address": " ",
+			"Postcode": " ",
+			"Town": " ",
+			"Facility": "Sports Hall",
+			"Comments": " ",
+			"GlobalID": "1f1366b3-e815-4cc7-bf96-c27b0e0348af"
+		},
+		"geometry": null
+	}]
+}

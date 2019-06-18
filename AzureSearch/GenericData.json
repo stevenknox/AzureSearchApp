@@ -1,0 +1,43 @@
+[
+ {
+     "id": 1,
+     "name" : "Steven Knox",
+     "tags" : [
+         "Developer",
+         "Male"
+     ],
+     "data" : "I have been involved in software for almost two decades with experience across a range of industry sectors. I now specialise in Education Technology (EdTech) in my role as Head of Development at Wholeschool Software, and practical skills include solution architecture, IT management consulting and solutions development with particular strengths in the Microsoft product stack. I enjoy developing on the Microsoft stack having started working with the .Net Framework during the initial beta release in 2001, starting out entirely in VB.Net and later transitioning to C# and have come full circle embracing .Net Core from the beta stages in 2015.",
+     "dataType" : "Text",
+     "model" : "Person"
+ },
+ {
+    "id": 2,
+    "name" : "Benone Tourist Complex",
+     "tags" : [
+         "Tennis",
+         "Limavady"
+     ],
+     "data" : "Benone Avenue, Limavady, Co. Londonderry. 4 astroturf courts",
+     "dataType" : "Text",
+     "model" : "Place",
+     "geometry": {
+        "type": "Point",
+        "coordinates": [-6.869995433901436, 55.16334570333354]
+    }
+ },
+ {
+    "id": 2,
+    "name" : "Portrush Recreation Grounds",
+     "tags" : [
+         "Bowls",
+         "Portrush"
+     ],
+     "data" : "Ramore Avenue, Portrush, Co. Antrim, BT56 8BB. 2 bowling greens",
+     "dataType" : "Text",
+     "model" : "Place",
+     "geometry": {
+        "type": "Point",
+        "coordinates": [-6.659074213939466, 55.20979534199864]
+    }
+ }
+]
