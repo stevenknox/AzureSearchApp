@@ -11,28 +11,23 @@ namespace WebApp.Hubs
         public async Task Search(string term)
         {
            
-        //    var textResults = TextSearch.Create()
-        //                                 .Search(term)
-        //                                 .ToCombinedSearch();
-
-        //     var fileResults = FileSearch.Create()
-        //                                 .Search(term)
-        //                                 .ToCombinedSearch();
-
-            // var mediaResults = MediaSearch.Create()
-            //                               .Search(term)
-            //                               .ToCombinedSearch();
-
-            // var allResults = textResults.Concat(fileResults)
-            //                             .Concat(mediaResults)
-            //                             .ApplyIndex(startingIndex: 1)
-            //                             .ToList();
-
-            var allResults = MediaSearch.Create()
+           var textResults = TextSearch.Create()
                                         .Search(term)
-                                        .ToCombinedSearch()
+                                        .ToCombinedSearch();
+
+            var fileResults = FileSearch.Create()
+                                        .Search(term)
+                                        .ToCombinedSearch();
+
+            var mediaResults = MediaSearch.Create()
+                                          .Search(term)
+                                          .ToCombinedSearch();
+
+            var allResults = textResults.Concat(fileResults)
+                                        .Concat(mediaResults)
                                         .ApplyIndex(startingIndex: 1)
                                         .ToList();
+
 
             await Clients.All.SendAsync("resultsReceived", allResults);
         }
