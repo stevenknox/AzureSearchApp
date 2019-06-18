@@ -180,7 +180,7 @@ namespace AzureSearch
                                                 .Select(snippet => snippet.Value));
         }
 
-        public async Task IndexMediaAssets()
+        public async Task AnalyseMediaAssets()
         {
             try
             {

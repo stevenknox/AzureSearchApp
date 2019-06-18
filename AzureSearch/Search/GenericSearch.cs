@@ -17,7 +17,7 @@ namespace AzureSearch
     public class GenericSearch : SearchBase
     {
         private static string storageKey = "";
-        private static string azureFunctionsEndpoint = "";
+        // private readonly string azureFunctionsEndpoint;
         private const string dataSourceName = "search-blobstorage-data";
         private const string skillName = "generic-search-skills";
         private const string indexerName = "generic-search-indexer";
@@ -27,7 +27,7 @@ namespace AzureSearch
         private GenericSearch()
         {
             storageKey = File.ReadAllText($"{AzureCredentialsPath}/storage.private-azure-key");
-            azureFunctionsEndpoint = File.ReadAllText($"{AzureCredentialsPath}/functions.azure-endpoint");
+            // azureFunctionsEndpoint = File.ReadAllText($"{AzureCredentialsPath}/functions.azure-endpoint");
             index = "generic-index";
         }
 

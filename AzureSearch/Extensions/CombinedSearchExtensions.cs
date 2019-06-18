@@ -33,6 +33,16 @@ namespace AzureSearch
             return search;
         }
 
+        public static List<CombinedSearch> ToCombinedSearch(this DocumentSearchResult<GenericIndexModel> results)
+        {
+            var search = new List<CombinedSearch>();
+            foreach (var item in results.Results)
+            {
+                search.Add(new CombinedSearch(item.Document.Name, item.Document.DataType, SearchType.File, item.Document.Name));
+            }
+            return search;
+        }
+
         public static List<CombinedSearch> ToCombinedSearch(this DocumentSearchResult<MediaIndexModel> results)
         {
             var search = new List<CombinedSearch>();
