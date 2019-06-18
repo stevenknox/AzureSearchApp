@@ -40,7 +40,7 @@ Next startup the ASP.NET Core app, open a new termnial in the WebApp root and ru
 
 ````
 dotnet watch run
-```
+````
 
 This will startup the web server, you should now be able to load up the web app in your browser (usually https://localhost:5001)
 
