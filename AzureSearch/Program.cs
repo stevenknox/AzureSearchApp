@@ -45,23 +45,19 @@ namespace AzureSearch
             WriteLine($@"
 -----SEARCH-----
 
-1. Search All
-2. Search Text
-3. Search Files
-4. Search Media
-5. Search Generic
+1. Search
 
 -----MANAGE-----
 
-6. Index Text
-7. Index Files
-8. Index Media
-9. Index Generic
+2. Index All
+3. Index Text/Objects
+4. Index Files
+5. Index Media
 
 -----CONTENT-----
 
-10. Upload and Analyse Media
-11. Upload File
+6. Upload and Analyse Media
+7. Upload File
 
 -----DELETE-----
 
@@ -74,54 +70,42 @@ Select option to continue:");
             switch (ReadLine())
             {
                 case "1":
-                    Search.All();
+                    SearchService
+                            .Create()
+                            .StartSearch();
                     break;
                 case "2":
-                    TextSearch
-                        .Create()
-                        .Search();
+                    await TextSearch
+                            .Create()
+                            .Index();
+                    await FileSearch
+                            .Create()
+                            .Index();
+                    await MediaSearch
+                            .Create()
+                            .Index();
                     break;
                 case "3":
-                    FileSearch
-                        .Create()
-                        .Search();
-                    break;
-                case "4":
-                    MediaSearch
-                        .Create()
-                        .Search();
-                    break;
-                case "5":
-                    GenericSearch
-                        .Create()
-                        .Search();
-                    break;
-                case "6":
                     await TextSearch
                             .Create()
                             .Index();
                     break;
-                case "7":
+                case "4":
                     await FileSearch
                             .Create()
                             .Index();
                     break;
-                case "8":
+                case "5":
                     await MediaSearch
                             .Create()
                             .Index();
                     break;
-                case "9":
-                    await GenericSearch
-                            .Create()
-                            .Index();
-                    break;
-                case "10":
+                case "6":
                     await MediaSearch
                             .Create()
                             .AnalyseMediaAssets();
                     break;
-                case "11":
+                case "7":
                     await FileSearch
                             .Create()
                             .UploadFileToStorage();

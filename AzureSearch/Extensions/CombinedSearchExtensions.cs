@@ -4,60 +4,38 @@ using Microsoft.Azure.Search.Models;
 
 namespace AzureSearch
 {
-
     public static class CombinedSearchExtensions
     {
         public static IEnumerable<CombinedSearch> ApplyIndex(this IEnumerable<CombinedSearch> results, int startingIndex = 0) => results.Select((value, i) => { value.Id = i + startingIndex; return value; });
-        public static List<CombinedSearch> ToCombinedSearch(this DocumentSearchResult<AreaOfInterestIndexModel> results)
+
+        public static List<CombinedSearch> ToCombinedSearch(this DocumentSearchResult<SearchIndex> results)
         {
             var search = new List<CombinedSearch>();
             foreach (var item in results.Results)
             {
-                search.Add(new CombinedSearch(item.Document.Name, "Database", SearchType.Text, 
-                    new List<AreaOfInterestIndexModel> { item.Document }.ToStringTable(u => u.Name,
-                                                                                        u => u.Address,
-                                                                                        u => u.Town,
-                                                                                        u => u.Postcode,
-                                                                                        u => u.Facility)));
+                search.Add(new CombinedSearch(item.Document.Name, 
+                                            item.Document.DataType == "Object" ? item.Document.Model : item.Document.DataType, 
+                                            item.Document.ToFriendlyFileType(), 
+                                            item.Document.DataType.ToSearchType(), 
+                                            item.Document.ToDetails()));
             }
             return search;
         }
 
-        public static List<CombinedSearch> ToCombinedSearch(this DocumentSearchResult<FileIndexModel> results)
+        public static string ToDetails(this SearchIndex item)
         {
-            var search = new List<CombinedSearch>();
-            foreach (var item in results.Results)
-            {
-                search.Add(new CombinedSearch(item.Document.metadata_storage_name, item.Document.ToFriendlyFileType(), SearchType.File, item.Document.metadata_storage_name));
-            }
-            return search;
+            if(!string.IsNullOrWhiteSpace(item.Url))
+                return item.Url;
+            else if(item.DataType == "Object")
+                return item.MergedText;
+            else
+                return item.Name;
         }
-
-        public static List<CombinedSearch> ToCombinedSearch(this DocumentSearchResult<GenericIndexModel> results)
+        public static string ToFriendlyFileType(this SearchIndex input)
         {
-            var search = new List<CombinedSearch>();
-            foreach (var item in results.Results)
-            {
-                search.Add(new CombinedSearch(item.Document.Name, item.Document.DataType, SearchType.File, item.Document.Name));
-            }
-            return search;
-        }
-
-        public static List<CombinedSearch> ToCombinedSearch(this DocumentSearchResult<MediaIndexModel> results)
-        {
-            var search = new List<CombinedSearch>();
-            foreach (var item in results.Results)
-            {
-                search.Add(new CombinedSearch(item.Document.Title, "Video (mp4) with transcript", SearchType.Media, item.Document.Url));
-            }
-            return search;
-        }
-
-
-        public static string ToFriendlyFileType(this FileIndexModel input)
-        {
-           switch (input.metadata_content_type)
+           switch (input.DataType)
            {
+               case "Object": return input.Model.Split('.')?.Last();
                case "image/jpeg": return "Image (jpg)";
                case "image/png": return "Image (png)";
                case "image/gif": return "Image (gif)";
@@ -68,7 +46,18 @@ namespace AzureSearch
                case "video/mp4": return "Video (mp4)";
                case "text/html": return "HTML";
 
-               default: return input.metadata_content_type;
+               default: return input.DataType;
+           }
+        }
+
+        public static SearchType ToSearchType(this string input)
+        {
+           switch (input)
+           {
+               case "Object": return SearchType.Object;
+               case "Media": return SearchType.Media;
+
+               default: return SearchType.File;
            }
         }
     }

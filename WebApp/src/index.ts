@@ -66,8 +66,7 @@ btnSearch.addEventListener("click", search);
 function search() {
     loading.hidden = false;
     tblResults.hidden = true;
-    connection.send("search", tbSearch.value)
-    .then(() => tbSearch.value = "");
+    connection.send("search", tbSearch.value);
 }
 
 function openModal(id: number) {

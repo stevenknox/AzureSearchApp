@@ -8,28 +8,21 @@ namespace WebApp.Hubs
 {
     public class SearchHub : Hub
     {
+        private readonly ISearchService _service;
+
+        public SearchHub(ISearchService service)
+        {
+            _service = service;
+        }
         public async Task Search(string term)
         {
-           
-           var textResults = TextSearch.Create()
-                                        .Search(term)
-                                        .ToCombinedSearch();
-
-            var fileResults = FileSearch.Create()
-                                        .Search(term)
-                                        .ToCombinedSearch();
-
-            var mediaResults = MediaSearch.Create()
-                                          .Search(term)
-                                          .ToCombinedSearch();
-
-            var allResults = textResults.Concat(fileResults)
-                                        .Concat(mediaResults)
-                                        .ApplyIndex(startingIndex: 1)
-                                        .ToList();
+           var results = _service.Search(term)
+                .ToCombinedSearch()
+                .ApplyIndex(startingIndex: 1)
+                .ToList();
 
 
-            await Clients.All.SendAsync("resultsReceived", allResults);
+            await Clients.All.SendAsync("resultsReceived", results);
         }
 
         public async Task DownloadFile(string file, bool isImage)

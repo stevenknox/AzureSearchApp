@@ -1,4 +1,5 @@
 using Microsoft.Azure.Search;
+using Microsoft.Azure.Search.Models;
 using System;
 using System.IO;
 
@@ -16,6 +17,7 @@ namespace AzureSearch
         public SearchBase()
         {
             apiKey = File.ReadAllText($"{AzureCredentialsPath}/search.private-azure-key");   
+            index = "generic-index";
         }
     }
 }

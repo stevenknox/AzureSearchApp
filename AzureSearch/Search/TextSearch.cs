@@ -12,73 +12,12 @@ using System.Linq;
 
 namespace AzureSearch
 {
-    public class TextSearch : AzureSearch.SearchBase
+    public class TextSearch : SearchBase
     {
         public static TextSearch Create() => new TextSearch();
 
         private TextSearch()
         {
-            index = "areas-of-interest";
-        }
-
-        public void Search()
-        {
-            using (var client = CreateIndexClient())
-            {
-                WriteLine($"Enter Your Search Query:");
-
-                var query = ReadLine();
-
-                var results = GetSearchResults(client, query);
-
-                ForegroundColor = Green;
-
-                WriteLine($"{Environment.NewLine}{results.Count} results found for : {query}{Environment.NewLine}");
-
-                ResetColor();
-
-                var table = results.Results.ToStringTable(
-                    u => u.Document.Name,
-                    u => u.Document.Address,
-                    u => u.Document.Town,
-                    u => u.Document.Postcode,
-                    u => u.Document.Facility
-                );
-
-                WriteLine(table);
-
-                WriteLine($"{Environment.NewLine}Enter another search query:");
-
-                Search();
-            }
-        }
-        public DocumentSearchResult<AreaOfInterestIndexModel> Search(string query, string filter = "")
-        {
-            using (var client = CreateIndexClient())
-            {
-               return GetSearchResults(client, query, filter);
-            }
-        }
-
-        private DocumentSearchResult<AreaOfInterestIndexModel> GetSearchResults(SearchIndexClient client, string query, string filter = "")
-        {
-            var searchParams = new SearchParameters
-            {
-                Select = new[] { "name", "address", "town", "postcode" },
-                Facets = new[] { "town" }.ToList(),
-                Filter = AppendFilters(filter), 
-                IncludeTotalResultCount = true
-            };
-
-            return client.Documents.Search<AreaOfInterestIndexModel>(query, searchParams);
-        }
-
-        private string AppendFilters(string filter)
-        {
-            if(!string.IsNullOrEmpty(filter))
-                return filter;
-
-            return "";
         }
 
         public async Task Index()
@@ -97,7 +36,7 @@ namespace AzureSearch
 
                 var data = await GetData();
 
-                var actions = new List<IndexAction<AreaOfInterestIndexModel>>();
+                var actions = new List<IndexAction<SearchIndex>>();
                 foreach (var item in data)
                 {
                     actions.Add(IndexAction.Upload(item));
@@ -125,17 +64,17 @@ namespace AzureSearch
             var def = new Index()
             {
                 Name = index,
-                Fields = FieldBuilder.BuildForType<AreaOfInterestIndexModel>()
+                Fields = FieldBuilder.BuildForType<SearchIndex>()
             };
 
             client.Indexes.Create(def);
         }
 
-        private async Task<List<AreaOfInterestIndexModel>> GetData()
+        private async Task<List<SearchIndex>> GetData()
         {
             var data = await File.ReadAllTextAsync($"{Environment.CurrentDirectory}/Data.json");
 
-            return JsonConvert.DeserializeObject<AreasOfInterest>(data).ToAreaOfInterestList();
+            return JsonConvert.DeserializeObject<AreasOfInterest>(data).ToSearchIndex();
         }
     }
 }

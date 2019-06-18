@@ -33,64 +33,7 @@ namespace AzureSearch
         private MediaSearch()
         {
             mediaServicesAuth = JsonConvert.DeserializeObject<MediaServicesAuth>(File.ReadAllText($"{AzureCredentialsPath}/media.private-azure-key"));
-            index = "media-index";
         }
-
-        public void Search()
-        {
-            using (var client = CreateIndexClient())
-            {
-                WriteLine($"Enter Your Search Query:");
-
-                var query = ReadLine();
-
-                var results = GetSearchResults(client, query);
-
-                ForegroundColor = Green;
-
-                WriteLine($"{Environment.NewLine}{results.Count} results found for : {query}{Environment.NewLine}");
-
-                ResetColor();
-
-                var table = results.Results.ToStringTable(
-                    u => u.Document.Title,
-                    u => u.Document.Url
-                );
-
-                WriteLine(table);
-
-                WriteLine($"{Environment.NewLine}Enter another search query:");
-
-                Search();
-            }
-        }
-
-        public DocumentSearchResult<MediaIndexModel> Search(string query)
-        {
-            using (var client = CreateIndexClient())
-            {
-                return GetSearchResults(client, query);
-            }
-        }
-        private DocumentSearchResult<MediaIndexModel> GetSearchResults(SearchIndexClient client, string query)
-        {
-            var searchParams = new SearchParameters
-            {
-                Select = new[] { "title", "url" },
-                IncludeTotalResultCount = true
-            };
-
-            try
-            {
-                return client.Documents.Search<MediaIndexModel>(query, searchParams);
-            }
-            catch (Exception ex)
-            {
-                WriteLine($"Search failed with error {ex.Message}");
-            }
-            return null;
-        }
-
 
         public string TTML(string rootFolder, string fileName) => File.ReadAllText($"{rootFolder}{mediaFolderWithoutRoot}{fileName}{Path.DirectorySeparatorChar}transcript.ttml");
         public string VTT(string rootFolder, string fileName) => File.ReadAllText($"{rootFolder}{mediaFolderWithoutRoot}{fileName}{Path.DirectorySeparatorChar}transcript.ttml");
@@ -110,11 +53,11 @@ namespace AzureSearch
                     WriteLine("Index Exists");
                 }
 
-                var actions = new List<IndexAction<MediaIndexModel>>();
+                var actions = new List<IndexAction<SearchIndex>>();
                 foreach (var item in GetData())
                 {
                     actions.Add(IndexAction.Upload(item));
-                    WriteLine($"Adding {item.Title} to Azure Search");
+                    WriteLine($"Adding {item.Name} to Azure Search");
                 }
 
                 var batch = IndexBatch.New(actions);
@@ -138,26 +81,27 @@ namespace AzureSearch
             var def = new Index()
             {
                 Name = index,
-                Fields = FieldBuilder.BuildForType<MediaIndexModel>()
+                Fields = FieldBuilder.BuildForType<SearchIndex>()
             };
 
             client.Indexes.Create(def);
         }
 
-        private static List<MediaIndexModel> GetData()
+        private static List<SearchIndex> GetData()
         {
-            var models = new List<MediaIndexModel>();
+            var models = new List<SearchIndex>();
 
             var mediaFolders = Directory.EnumerateDirectories($"{mediaOutputFolder}", "*.*", SearchOption.TopDirectoryOnly);
 
             foreach (var media in mediaFolders)
             {
-                var model = new MediaIndexModel
+                var model = new SearchIndex
                 {
-                    Title = Path.GetFileName(media),
+                    Name = Path.GetFileName(media),
                     Url = $"{Path.GetFileName(media)}.mp4",
                     Id = ConvertToAlphaNumeric(Path.GetFileName(media)).ToLower().Replace(" ", ""),
-                    Transcribed_text = ParseTTML($"{media}{Path.DirectorySeparatorChar}transcript.ttml")
+                    MergedText = ParseTTML($"{media}{Path.DirectorySeparatorChar}transcript.ttml"),
+                    DataType = "Media"
                 };
                 models.Add(model);
             }

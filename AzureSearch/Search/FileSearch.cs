@@ -23,67 +23,6 @@ namespace AzureSearch
         private FileSearch()
         {
             storageKey = File.ReadAllText($"{AzureCredentialsPath}/storage.private-azure-key");
-            index = "generic-index"; //"azureblob-index";
-        }
-
-        public void Search()
-        {
-            using (var client = CreateIndexClient())
-            {
-                WriteLine($"Enter Your Search Query:");
-
-                var query = ReadLine();
-
-                var results = GetSearchResults(client, query);
-
-                ForegroundColor = Green;
-
-                WriteLine($"{Environment.NewLine}{results.Count} results found for : {query}{Environment.NewLine}");
-
-                ResetColor();
-
-                var table = results.Results.ToStringTable(
-                    u => u.Document.Name,
-                    u => u.Document.DataType
-                );
-
-                WriteLine(table);
-
-                WriteLine($"Enter File ID to download:");
-
-                var fileToDownload = Convert.ToInt32(ReadLine());
-
-                DownloadFile($"{Environment.CurrentDirectory}/Downloads", results.Results[fileToDownload - 1].Document.Name);
-
-                WriteLine($"{Environment.NewLine}Enter another search query:");
-
-                Search();
-            }
-        }
-
-        public DocumentSearchResult<GenericIndexModel> Search(string query)
-        {
-            using (var client = CreateIndexClient())
-            {
-                return GetSearchResults(client, query);
-            }
-        }
-        private DocumentSearchResult<GenericIndexModel> GetSearchResults(SearchIndexClient client, string query)
-        {
-            var searchParams = new SearchParameters
-            {
-                IncludeTotalResultCount = true
-            };
-
-            try
-            {
-                return client.Documents.Search<GenericIndexModel>(query, searchParams);
-            }
-            catch (System.Exception ex)
-            {
-                WriteLine($"Search failed with error {ex.Message}");
-            }
-            return null;
         }
 
         public async Task Index()
@@ -112,7 +51,7 @@ namespace AzureSearch
             var def = new Index()
             {
                 Name = index,
-                Fields = FieldBuilder.BuildForType<GenericIndexModel>()
+                Fields = FieldBuilder.BuildForType<SearchIndex>()
             };
 
             try
@@ -426,22 +365,13 @@ namespace AzureSearch
                         sourceFieldName: "metadata_storage_path",
                         targetFieldName: "id",
                         mappingFunction: new FieldMappingFunction(
-                        name: "base64Encode")),
-                    new FieldMapping(
-                        sourceFieldName: "content",
-                        targetFieldName: "content"),
-                    new FieldMapping(
-                        sourceFieldName: "tags",
-                        targetFieldName: "tags"),
-                    // new FieldMapping(
-                    //     sourceFieldName: "content",
-                    //     targetFieldName: "text")
+                        name: "base64Encode"))
                 };
 
                 List<FieldMapping> outputMappings = new List<FieldMapping>
                 {
                     new FieldMapping(
-                    sourceFieldName: "/document/mergedText/keyPhrases",
+                    sourceFieldName: "/document/mergedText/keyPhrases/*",
                     targetFieldName: "keyPhrases"),
                       new FieldMapping(
                     sourceFieldName: "/document/mergedText",

@@ -2,7 +2,7 @@ namespace AzureSearch
 {
     public enum SearchType
     {
-        Text,
+        Object,
         File,
         Media
     }
