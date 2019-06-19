@@ -35,9 +35,10 @@ namespace AzureSearch
                 }
 
                 var data = await GetData();
+                var privateData = await GetPrivateData();
 
                 var actions = new List<IndexAction<SearchIndex>>();
-                foreach (var item in data)
+                foreach (var item in data.Concat(privateData))
                 {
                     actions.Add(IndexAction.Upload(item));
                     RaiseEvent($"Adding {item.Name} to Azure Search");
@@ -79,9 +80,34 @@ namespace AzureSearch
 
         private async Task<List<SearchIndex>> GetPrivateData()
         {
-            var courses = await File.ReadAllTextAsync($"{basePath}/SeedData/Private/Courses.json");
+            if (File.Exists($"{basePath}/SeedData/Private/Courses.json") && File.Exists($"{basePath}/SeedData/Private/Mentors.json"))
+            {
+                var courses = await File.ReadAllTextAsync($"{basePath}/SeedData/Private/Courses.json");
 
-            var courseIndex = JsonConvert.DeserializeObject<AreasOfInterest>(courses).ToSearchIndex();
+                var courseIndex = JsonConvert.DeserializeObject<List<dynamic>>(courses).Select(s => new SearchIndex
+                {
+                    Id = s.id,
+                    Name = s.fullname,
+                    MergedText = JsonConvert.SerializeObject(s),
+                    Model = "Course",
+                    DataType = "Object"
+                }).ToList();
+
+                var mentors = await File.ReadAllTextAsync($"{basePath}/SeedData/Private/Mentors.json");
+
+                var mentorIndex = JsonConvert.DeserializeObject<List<dynamic>>(mentors).Select(s => new SearchIndex
+                {
+                    Id = s.Id,
+                    Name = $"{s.Name_FirstName} {s.Name_LastName}",
+                    MergedText = JsonConvert.SerializeObject(s),
+                    Model = "Mentor",
+                    DataType = "Object"
+                }).ToList();
+
+
+                return courseIndex.Concat(mentorIndex).ToList();
+            }
+            return new List<SearchIndex>(); 
         }
 
         private void RaiseEvent(string message)

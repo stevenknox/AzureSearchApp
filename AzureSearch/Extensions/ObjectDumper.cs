@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
+using Newtonsoft.Json.Linq;
 
 namespace AzureSearch
 {
@@ -45,6 +46,13 @@ namespace AzureSearch
             if (element == null || element is ValueType || element is string)
             {
                 Write(FormatValue(element));
+            }
+            else if(element.GetType() == typeof(JObject))
+            {
+                foreach (JProperty property in ((JObject)element).Properties())
+                {
+                    Write("{0}: {1}", property.Name, property.Value);
+                }
             }
             else
             {

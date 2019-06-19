@@ -117,7 +117,9 @@ namespace AzureSearch
         public static string PrintObject(CombinedSearch item, bool outputAsHtml = false)
         {
             //we are assuming the type is in the same assembly, otherwise you would need to ensure namespace prefix and the assembly is loaded
-            dynamic myObject = JsonConvert.DeserializeObject(item.Details, Type.GetType(item.Type));
+            Type castToType = Type.GetType(item.Type);
+
+            dynamic myObject = castToType == null ? JsonConvert.DeserializeObject(item.Details) : JsonConvert.DeserializeObject(item.Details, castToType);
 
             return outputAsHtml ? ObjectDumper.DumpHtml(myObject) : ObjectDumper.Dump(myObject);
         }
