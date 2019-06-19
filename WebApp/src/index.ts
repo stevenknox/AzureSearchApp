@@ -4,25 +4,51 @@ import "bootstrap";
 import * as $ from "jquery";
 
 import { SearchResult } from "./models";
+import { setTimeout } from "timers";
 
 const tblResults: HTMLTableElement = document.querySelector("#tblResults");
 const tbSearch: HTMLInputElement = document.querySelector("#tbSearch");
 const btnSearch: HTMLButtonElement = document.querySelector("#btnSearch");
+const btnReindex: HTMLButtonElement = document.querySelector("#btnReindex");
+const btnAnalyseMedia: HTMLButtonElement = document.querySelector("#btnAnalyseMedia");
 const modalHeader: HTMLHeadingElement = document.querySelector("#modalHeader");
 const modalDetails: HTMLDivElement = document.querySelector("#modalDetails");
 const modalDownloading: HTMLDivElement = document.querySelector("#modalDownloading");
+const modalUploading: HTMLDivElement = document.querySelector("#modalUploading");
+const notification: HTMLDivElement = document.querySelector("#notification");
+const eventsWrapper: HTMLDivElement = document.querySelector("#eventsWrapper");
+const events: HTMLPreElement = document.querySelector("#events");
+const modalUploadingComplete: HTMLDivElement = document.querySelector("#modalUploadingComplete");
 const modalImage: HTMLDivElement = document.querySelector("#modalImage");
 const modalVideo: HTMLDivElement = document.querySelector("#modalVideo");
 const video: HTMLVideoElement = document.querySelector("#video");
 const image: HTMLImageElement = document.querySelector("#image");
 const loading: HTMLDivElement = document.querySelector("#loading");
 const transcript: HTMLPreElement = document.querySelector("#transcript");
+const files: HTMLInputElement = document.querySelector("#files");
+
 
 const connection = new signalR.HubConnectionBuilder()
     .withUrl("/hub")
     .build();
 
 let results: SearchResult[];
+
+$(document).ready(function(){
+
+    var myToast = $("#myToast");
+    myToast.toast({
+        autohide: false
+    });
+
+    $(".hide-toast").click(function(){
+        myToast.toast('hide');
+    });
+
+    $(".show-toast").click(function(){
+        myToast.toast('show');
+    });
+});
 
 connection.start().catch(err => document.write(err));
 
@@ -34,7 +60,7 @@ connection.on("resultsReceived", (res: SearchResult[]) => {
     let result = "";
     
     results.forEach(element => {
-        result += `<tr data-index-number=${element.id} class='select-result'><td>${element.id}</td><td>${element.name}</td><td>${element.type}</td></tr>`;
+        result += `<tr data-index-number=${element.id} class='select-result'><td>${element.id}</td><td>${element.name}</td><td>${element.displayType}</td></tr>`;
     });
     
     m.innerHTML = result;
@@ -55,6 +81,11 @@ connection.on("fileDownloaded", (fileName: string, isImage: boolean) => {
     DisplayOrDownload(fileName, isImage);
 });
 
+connection.on("eventReceived", (message: string) => {
+    events.innerHTML += `${message}<br />`;
+    events.scrollTop = events.scrollHeight;
+});
+
 tbSearch.addEventListener("keyup", (e: KeyboardEvent) => {
     if (e.keyCode === 13) {
         search();
@@ -63,7 +94,14 @@ tbSearch.addEventListener("keyup", (e: KeyboardEvent) => {
 
 btnSearch.addEventListener("click", search);
 
+btnReindex.addEventListener("click", reindex);
+
+btnAnalyseMedia.addEventListener("click", analyseMedia);
+
+files.addEventListener("change", uploadFiles);
+
 function search() {
+    $("#tblResults tbody").remove();
     loading.hidden = false;
     tblResults.hidden = true;
     connection.send("search", tbSearch.value);
@@ -84,14 +122,25 @@ function openModal(id: number) {
 
     if(+selectedResult.searchType == 0)
     {
-        modalDetails.innerText = selectedResult.details;
-        modalDetails.hidden = false;
-        
-        $("#detailsModal").modal();
+        $.ajax({
+            url: "api/search/objectinfo",
+            type: 'post',
+            data: JSON.stringify(selectedResult),
+            headers: {
+                "Content-Type": 'application/json',
+            },
+            dataType: 'text',
+            success: function (data) {
+                console.log("RES", data);
+                modalDetails.innerHTML = data;
+                modalDetails.hidden = false;
+                $("#detailsModal").modal();
+            }
+        });
     }
     if(+selectedResult.searchType == 1)
     {
-        DisplayOrDownload(selectedResult.details, selectedResult.type.includes("Image"));
+        DisplayOrDownload(selectedResult.details, selectedResult.displayType.includes("Image"));
     }
     else if(+selectedResult.searchType == 2)
     {
@@ -155,3 +204,63 @@ function urlExists(url: string)
     http.send();
     return http.status!=404;
 }
+
+function analyseMedia(){
+    console.log("Analyse Media 2");
+  
+}
+
+function reindex() {
+    console.log("Starting Reindex");
+    var myToast = $("#myToast");
+    eventsWrapper.hidden = false;
+    
+    $.post("/api/search/reindex", function(){
+        console.log("Finished Indexing");
+        notification.innerText = "Reindexing has completed. Newly indexed data should now appear in search results.";
+        myToast.toast('show');
+
+        setTimeout(() => {
+            console.log("Tidy Up Indexing");
+            myToast.toast('hide');
+            eventsWrapper.hidden = true;
+            events.innerText = "";
+            notification.innerText = "";
+        }, 5000);
+    })
+}
+
+
+function uploadFiles() {
+    var myToast = $("#myToast");
+    modalUploading.hidden = false;
+
+    var fileToUpload = files.files;
+    var formData = new FormData();
+  
+    for (var i = 0; i != fileToUpload.length; i++) {
+      formData.append("files", fileToUpload[i]);
+    }
+  
+    $.ajax(
+      {
+        url: "/api/search/uploadfile",
+        data: formData,
+        processData: false,
+        contentType: false,
+        type: "POST",
+        success: function (data) {
+            modalUploading.hidden = true;
+            modalUploadingComplete.hidden = false;
+            notification.innerText = "File has been uploaded successfully to Azure. Run a Reindex to see the file in search results.";
+            $("#uploadModal").modal("hide");
+            myToast.toast('show');
+            setTimeout(function(){
+                modalUploadingComplete.hidden = true;
+                myToast.toast('hide');
+                notification.innerText = "";
+            }, 5000);
+        }
+      }
+    );
+  }
