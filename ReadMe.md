@@ -1,6 +1,8 @@
 # Azure Cognitive Search Demo Applications
 
-![Screenshot](AzureSearchScreenshot.png)
+![Search](AzureSearchScreenshot.png)
+
+![Index](AzureIndexScreenshot.png)
 
 These demo applications show using Azure to create an intelligent search for:
 
