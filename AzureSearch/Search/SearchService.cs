@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Dynamic;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.Azure.Search;
 using Microsoft.Azure.Search.Models;
 using Newtonsoft.Json;
@@ -14,12 +15,19 @@ namespace AzureSearch
     public interface ISearchService
     {
         DocumentSearchResult<SearchIndex> Search(string query, string filter = "");
+        Task Reindex(string basePath, Action<string> onEventAdded);
     }
     public class SearchService : SearchBase, ISearchService
     {
         private static readonly int indexOffset = 1;
+        private IDisposable eventAddedSubscription;
 
         public static SearchService Create() => new SearchService();
+
+        public SearchService()
+        {
+             
+        }
 
         public void StartSearch()
         {
@@ -64,7 +72,7 @@ namespace AzureSearch
 
                     if (item.SearchType == SearchType.File)
                     {
-                        var file = FileSearch.Create().DownloadFile($"{Environment.CurrentDirectory}/Downloads", item.Name);
+                        var file = FileSearch.Create().DownloadFile($"{basePath}/Downloads", item.Name);
 
                         WriteLine($"Opening File from {file}");
 
@@ -83,7 +91,7 @@ namespace AzureSearch
 
                         try
                         {
-                            Process.Start(@"cmd.exe ", $@"/c ""{Environment.CurrentDirectory}/Media/Output/{item.Details}""");
+                            Process.Start(@"cmd.exe ", $@"/c ""{basePath}/Media/Output/{item.Details}""");
                         }
                         catch (System.ComponentModel.Win32Exception ex)
                         {
@@ -93,13 +101,7 @@ namespace AzureSearch
                     }
                     else if (item.SearchType == SearchType.Object)
                     {
-                        //we are assuming the type is in the same assembly, otherwise you would need to ensure namespace prefix and the assembly is loaded
-                        dynamic myObject = JsonConvert.DeserializeObject(item.Details, Type.GetType(item.Type));
-
-                        var expando = new ExpandoObject();
-                        var dictionary = (IDictionary<string, object>)expando;
-
-                        PrintObjectProperties(myObject, dictionary);
+                        WriteLine(PrintObject(item));
                     }
 
                     StartSearch();
@@ -112,20 +114,12 @@ namespace AzureSearch
 
         }
 
-        private static void PrintObjectProperties(dynamic myObject, IDictionary<string, object> dictionary)
+        public static string PrintObject(CombinedSearch item, bool outputAsHtml = false)
         {
-            foreach (var property in myObject.GetType().GetProperties())
-            {
-                if (property.PropertyType.FullName == "System.String" || property.PropertyType.IsPrimitive)
-                {
-                    dictionary.Add(property.Name, property.GetValue(myObject));
-                    WriteLine($"{property.Name} - {property.GetValue(myObject)}");
-                }
-                else
-                {
-                    PrintObjectProperties(property.GetValue(myObject), dictionary);
-                }
-            }
+            //we are assuming the type is in the same assembly, otherwise you would need to ensure namespace prefix and the assembly is loaded
+            dynamic myObject = JsonConvert.DeserializeObject(item.Details, Type.GetType(item.Type));
+
+            return outputAsHtml ? ObjectDumper.DumpHtml(myObject) : ObjectDumper.Dump(myObject);
         }
 
         public DocumentSearchResult<SearchIndex> Search(string query, string filter = "")
@@ -157,5 +151,25 @@ namespace AzureSearch
             return "";
         }
 
+        public async Task Reindex(string basePath, Action<string> onEventAdded)
+        {
+            var textSearch = TextSearch.Create(basePath);
+
+            eventAddedSubscription = textSearch.EventAdded.Subscribe(onEventAdded);
+
+            await textSearch.Index();
+
+            await FileSearch
+                    .Create(basePath)
+                    .Index();
+            await MediaSearch
+                    .Create(basePath)
+                    .Index();
+        }
+
+         public void Dispose()
+        {
+            eventAddedSubscription.Dispose();
+        }
     }
 }

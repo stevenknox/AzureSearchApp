@@ -17,8 +17,7 @@ namespace AzureSearch
         private const string dataSourceName = "search-blobstorage-data";
         private const string skillName = "generic-search-skills";
         private const string indexerName = "generic-search-indexer";
-
-        public static FileSearch Create() => new FileSearch();
+        public static FileSearch Create(string rootPath = "") => new FileSearch { basePath = string.IsNullOrWhiteSpace(rootPath) ? Environment.CurrentDirectory : rootPath };
 
         private FileSearch()
         {
@@ -427,6 +426,27 @@ namespace AzureSearch
                 WriteLine($"Uploading {fileName} to Azure Blob Storage");
 
                 await blockBlob.UploadFromFileAsync(filePath);
+
+                WriteLine($"Upload Complete");
+            }
+            else
+            {
+                throw new ArgumentNullException("Storage Key Not Found!");
+            }
+        }
+
+        public async Task UploadFileToStorage(string fileName, byte[] byteArray)
+        {
+            if (CloudStorageAccount.TryParse(storageKey, out CloudStorageAccount storageAccount))
+            {
+                CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+                CloudBlobContainer container = blobClient.GetContainerReference("search-data");
+
+                CloudBlockBlob blockBlob = container.GetBlockBlobReference(fileName);
+
+                WriteLine($"Uploading {fileName} to Azure Blob Storage");
+
+                await blockBlob.UploadFromByteArrayAsync(byteArray, 0, byteArray.Length);
 
                 WriteLine($"Upload Complete");
             }

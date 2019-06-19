@@ -24,11 +24,24 @@ namespace AzureSearch
     {
         private readonly MediaServicesAuth mediaServicesAuth;
         private static readonly XNamespace ttmlns = "http://www.w3.org/ns/ttml";
-        private static readonly string mediaFolder = $"{Environment.CurrentDirectory}{Path.DirectorySeparatorChar}Media";
-        private static readonly string mediaFolderWithoutRoot = $"{Path.DirectorySeparatorChar}Media{Path.DirectorySeparatorChar}Output{Path.DirectorySeparatorChar}";
-        private static readonly string mediaOutputFolder = $"{mediaFolder}{Path.DirectorySeparatorChar}Output";
+        private string mediaFolder;
+        private string mediaFolderWithoutRoot;
+        private string mediaOutputFolder = "";
 
-        public static MediaSearch Create() => new MediaSearch();
+        public static MediaSearch Create(string rootPath = "")
+        {
+            var setBasePath = string.IsNullOrWhiteSpace(rootPath) ? Environment.CurrentDirectory : rootPath;
+            var setMediaFolder = $"{setBasePath}{Path.DirectorySeparatorChar}Media";
+            var setMediaOutputFolder = $"{setMediaFolder}{Path.DirectorySeparatorChar}Output";
+
+            return new MediaSearch 
+            { 
+                basePath = setBasePath,
+                mediaFolder = setMediaFolder,
+                mediaOutputFolder = setMediaOutputFolder,
+                mediaFolderWithoutRoot = $"{Path.DirectorySeparatorChar}Media{Path.DirectorySeparatorChar}Output{Path.DirectorySeparatorChar}",
+            };
+        }
 
         private MediaSearch()
         {
@@ -87,7 +100,7 @@ namespace AzureSearch
             client.Indexes.Create(def);
         }
 
-        private static List<SearchIndex> GetData()
+        private List<SearchIndex> GetData()
         {
             var models = new List<SearchIndex>();
 

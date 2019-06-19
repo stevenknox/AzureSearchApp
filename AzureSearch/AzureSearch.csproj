@@ -11,6 +11,7 @@
     <PackageReference Include="Microsoft.Azure.Search" Version="9.0.1" />
     <PackageReference Include="Microsoft.Azure.Storage.Blob" Version="10.0.3" />
     <PackageReference Include="Microsoft.Rest.ClientRuntime.Azure.Authentication" Version="2.4.0" />
+    <PackageReference Include="System.Reactive" Version="4.1.5" />
     <PackageReference Include="WindowsAzure.Storage" Version="9.3.3" />
   </ItemGroup>
 

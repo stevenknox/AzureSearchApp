@@ -14,7 +14,7 @@ namespace AzureSearch
 {
     public class TextSearch : SearchBase
     {
-        public static TextSearch Create() => new TextSearch();
+        public static TextSearch Create(string rootPath = "") => new TextSearch { basePath = string.IsNullOrWhiteSpace(rootPath) ? Environment.CurrentDirectory : rootPath };
 
         private TextSearch()
         {
@@ -26,12 +26,12 @@ namespace AzureSearch
             {
                 if (await client.Indexes.ExistsAsync(index) == false)
                 {
-                    WriteLine("Creating Index");
+                    RaiseEvent("Creating Index");
                     CreateIndex(client);
                 }
                 else
                 {
-                    WriteLine("Index Exists");
+                    RaiseEvent("Index Exists");
                 }
 
                 var data = await GetData();
@@ -40,21 +40,21 @@ namespace AzureSearch
                 foreach (var item in data)
                 {
                     actions.Add(IndexAction.Upload(item));
-                    WriteLine($"Adding {item.Name} to Azure Search");
+                    RaiseEvent($"Adding {item.Name} to Azure Search");
                 }
 
                 var batch = IndexBatch.New(actions);
 
                 try
                 {
-                    WriteLine($"Uploading Indexes to Azure Search");
+                    RaiseEvent($"Uploading Indexes to Azure Search");
                     ISearchIndexClient indexClient = client.Indexes.GetClient(index);
                     indexClient.Documents.Index(batch);
-                    WriteLine($"Indexing Complete");
+                    RaiseEvent($"Indexing Complete");
                 }
                 catch (Exception ex)
                 {
-                    WriteLine("Indexing Failed" + ex.ToString());
+                    RaiseEvent("Indexing Failed" + ex.ToString());
                 }
             }
         }
@@ -72,9 +72,28 @@ namespace AzureSearch
 
         private async Task<List<SearchIndex>> GetData()
         {
-            var data = await File.ReadAllTextAsync($"{Environment.CurrentDirectory}/Data.json");
+            var data = await File.ReadAllTextAsync($"{basePath}/SeedData/Data.json");
 
             return JsonConvert.DeserializeObject<AreasOfInterest>(data).ToSearchIndex();
+        }
+
+        private async Task<List<SearchIndex>> GetPrivateData()
+        {
+            var courses = await File.ReadAllTextAsync($"{basePath}/SeedData/Private/Courses.json");
+
+            var courseIndex = JsonConvert.DeserializeObject<AreasOfInterest>(courses).ToSearchIndex();
+        }
+
+        private void RaiseEvent(string message)
+        {
+            try
+            {
+                _eventAdded.OnNext(message);
+            }
+            catch (Exception ex)
+            {
+                _eventAdded.OnError(ex);
+            }
         }
     }
 }

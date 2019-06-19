@@ -2,6 +2,10 @@ namespace AzureSearch
 {
     public class CombinedSearch
     {
+        public CombinedSearch()
+        {
+            
+        }
         public CombinedSearch(string name, string type, string displayType, SearchType searchType, string details = "")
         {
             Name = name;
