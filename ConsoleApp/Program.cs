@@ -2,11 +2,16 @@
 using System.Threading.Tasks;
 using static System.Console;
 using static System.ConsoleColor;
+using AzureSearch;
+using System.IO;
+using Newtonsoft.Json;
 
-namespace AzureSearch
+namespace ConsoleApp
 {
     class Program
     {
+        internal readonly static string AzureCredentialsPath = $"{Environment.CurrentDirectory}/../.azure-credentials";
+
         static async Task Main(string[] args)
         {
             WriteLine(@"
@@ -67,52 +72,55 @@ Select option to continue:");
 
             ResetColor();
 
+            var apiKey = File.ReadAllText($"{AzureCredentialsPath}/search.private-azure-key"); 
+            var mediaServicesAuth =  JsonConvert.DeserializeObject<MediaServicesAuth>(File.ReadAllText($"{AzureCredentialsPath}/media.private-azure-key")); 
+            var storageKey = File.ReadAllText($"{AzureCredentialsPath}/storage.private-azure-key");
             switch (ReadLine())
             {
                 case "1":
                     SearchService
-                            .Create()
+                            .Create(apiKey, mediaServicesAuth)
                             .StartSearch();
                     break;
                 case "2":
                     await TextSearch
-                            .Create()
+                            .Create(apiKey)
                             .Index();
                     await FileSearch
-                            .Create()
+                            .Create(apiKey, storageKey)
                             .Index();
                     await MediaSearch
-                            .Create()
+                            .Create(apiKey, mediaServicesAuth)
                             .Index();
                     break;
                 case "3":
                     await TextSearch
-                            .Create()
+                            .Create(apiKey)
                             .Index();
                     break;
                 case "4":
                     await FileSearch
-                            .Create()
+                            .Create(apiKey, storageKey)
                             .Index();
                     break;
                 case "5":
                     await MediaSearch
-                            .Create()
+                            .Create(apiKey, mediaServicesAuth)
                             .Index();
                     break;
                 case "6":
                     await MediaSearch
-                            .Create()
+                            .Create(apiKey, mediaServicesAuth)
                             .AnalyseMediaAssets();
                     break;
                 case "7":
                     await FileSearch
-                            .Create()
+                            .Create(apiKey, storageKey)
                             .UploadFileToStorage();
                     break;
                 case "99":
                     await FileSearch
-                            .Create()
+                            .Create(apiKey, storageKey)
                             .Delete();
                     break;
                 default:

@@ -14,7 +14,12 @@ namespace AzureSearch
 {
     public class TextSearch : SearchBase
     {
-        public static TextSearch Create(string rootPath = "") => new TextSearch { basePath = string.IsNullOrWhiteSpace(rootPath) ? Environment.CurrentDirectory : rootPath };
+        public static TextSearch Create(string azureApiKey, string rootPath = "") 
+            => new TextSearch 
+            { 
+                apiKey = azureApiKey, 
+                basePath = string.IsNullOrWhiteSpace(rootPath) ? Environment.CurrentDirectory : rootPath 
+            };
 
         private TextSearch()
         {
@@ -34,8 +39,8 @@ namespace AzureSearch
                     RaiseEvent("Index Exists");
                 }
 
-                var data = await GetData();
-                var privateData = await GetPrivateData();
+                var data = GetData();
+                var privateData = GetPrivateData();
 
                 var actions = new List<IndexAction<SearchIndex>>();
                 foreach (var item in data.Concat(privateData))
@@ -71,18 +76,18 @@ namespace AzureSearch
             client.Indexes.Create(def);
         }
 
-        private async Task<List<SearchIndex>> GetData()
+        private List<SearchIndex> GetData()
         {
-            var data = await File.ReadAllTextAsync($"{basePath}/SeedData/Data.json");
+            var data = File.ReadAllText($"{basePath}/SeedData/Data.json");
 
             return JsonConvert.DeserializeObject<AreasOfInterest>(data).ToSearchIndex();
         }
 
-        private async Task<List<SearchIndex>> GetPrivateData()
+        private List<SearchIndex> GetPrivateData()
         {
             if (File.Exists($"{basePath}/SeedData/Private/Courses.json") && File.Exists($"{basePath}/SeedData/Private/Mentors.json"))
             {
-                var courses = await File.ReadAllTextAsync($"{basePath}/SeedData/Private/Courses.json");
+                var courses = File.ReadAllText($"{basePath}/SeedData/Private/Courses.json");
 
                 var courseIndex = JsonConvert.DeserializeObject<List<dynamic>>(courses).Select(s => new SearchIndex
                 {
@@ -93,7 +98,7 @@ namespace AzureSearch
                     DataType = "Object"
                 }).ToList();
 
-                var mentors = await File.ReadAllTextAsync($"{basePath}/SeedData/Private/Mentors.json");
+                var mentors = File.ReadAllText($"{basePath}/SeedData/Private/Mentors.json");
 
                 var mentorIndex = JsonConvert.DeserializeObject<List<dynamic>>(mentors).Select(s => new SearchIndex
                 {

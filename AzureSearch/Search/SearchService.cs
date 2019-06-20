@@ -16,13 +16,24 @@ namespace AzureSearch
     {
         DocumentSearchResult<SearchIndex> Search(string query, string filter = "");
         Task Reindex(string basePath, Action<string> onEventAdded);
+        SearchService ConfigureCredentials(string azureApiKey, MediaServicesAuth azureMediaServicesAuth);
     }
     public class SearchService : SearchBase, ISearchService
     {
         private static readonly int indexOffset = 1;
         private IDisposable eventAddedSubscription;
 
-        public static SearchService Create() => new SearchService();
+        public static SearchService Create(string azureApiKey, MediaServicesAuth azureMediaServicesAuth) 
+        { 
+            return new SearchService().ConfigureCredentials(azureApiKey , azureMediaServicesAuth);
+        }
+
+        public SearchService ConfigureCredentials(string azureApiKey, MediaServicesAuth azureMediaServicesAuth) 
+        { 
+            apiKey = azureApiKey; 
+            mediaServicesAuth = azureMediaServicesAuth; 
+            return this; 
+        }
 
         public SearchService()
         {
@@ -72,7 +83,7 @@ namespace AzureSearch
 
                     if (item.SearchType == SearchType.File)
                     {
-                        var file = FileSearch.Create().DownloadFile($"{basePath}/Downloads", item.Name);
+                        var file = FileSearch.Create(apiKey, storageKey).DownloadFile($"{basePath}/Downloads", item.Name);
 
                         WriteLine($"Opening File from {file}");
 
@@ -162,10 +173,10 @@ namespace AzureSearch
             await textSearch.Index();
 
             await FileSearch
-                    .Create(basePath)
+                    .Create(apiKey, storageKey, basePath)
                     .Index();
             await MediaSearch
-                    .Create(basePath)
+                    .Create(apiKey, mediaServicesAuth, basePath)
                     .Index();
         }
 

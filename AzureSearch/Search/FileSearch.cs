@@ -13,15 +13,22 @@ namespace AzureSearch
 {
     public class FileSearch : SearchBase
     {
-        private static string storageKey = "";
+        
         private const string dataSourceName = "search-blobstorage-data";
         private const string skillName = "generic-search-skills";
         private const string indexerName = "generic-search-indexer";
-        public static FileSearch Create(string rootPath = "") => new FileSearch { basePath = string.IsNullOrWhiteSpace(rootPath) ? Environment.CurrentDirectory : rootPath };
+        public static FileSearch Create(string azureApiKey, string azureStorageKey, string rootPath = "") 
+        {
+            return new FileSearch { 
+                    basePath = string.IsNullOrWhiteSpace(rootPath) ? Environment.CurrentDirectory : rootPath,
+                    apiKey = azureApiKey,
+                    storageKey = azureStorageKey
+                };
+        }
 
         private FileSearch()
         {
-            storageKey = File.ReadAllText($"{AzureCredentialsPath}/storage.private-azure-key");
+            
         }
 
         public async Task Index()

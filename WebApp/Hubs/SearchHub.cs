@@ -9,10 +9,12 @@ namespace WebApp.Hubs
     public class SearchHub : Hub
     {
         private readonly ISearchService _service;
+        private readonly IAzureCredentials _azureCredentials;
 
-        public SearchHub(ISearchService service)
+        public SearchHub(ISearchService service, IAzureCredentials azureCredentials)
         {
-            _service = service;
+            _azureCredentials = azureCredentials;
+            _service = service.ConfigureCredentials(azureCredentials.ApiKey, azureCredentials.MediaServicesAuth);
         }
         public async Task Search(string term)
         {
@@ -27,7 +29,8 @@ namespace WebApp.Hubs
 
         public async Task DownloadFile(string file, bool isImage)
         {
-            FileSearch.Create().DownloadFile($@"{Directory.GetCurrentDirectory()}\..\AzureSearch\Downloads", file);
+            FileSearch.Create(_azureCredentials.ApiKey, _azureCredentials.StorageKey)
+                    .DownloadFile($@"{Directory.GetCurrentDirectory()}\..\AzureSearch\Downloads", file);
 
             await Clients.All.SendAsync("fileDownloaded", file, isImage);
         }

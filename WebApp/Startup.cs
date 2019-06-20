@@ -39,6 +39,7 @@ namespace WebApp
             services.AddSignalR();
 
             services.AddTransient<ISearchService, SearchService>();
+            services.AddTransient<IAzureCredentials, AzureCredentials>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

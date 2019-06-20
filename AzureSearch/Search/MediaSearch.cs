@@ -22,13 +22,13 @@ namespace AzureSearch
 {
     public class MediaSearch : SearchBase
     {
-        private readonly MediaServicesAuth mediaServicesAuth;
+        
         private static readonly XNamespace ttmlns = "http://www.w3.org/ns/ttml";
         private string mediaFolder;
         private string mediaFolderWithoutRoot;
         private string mediaOutputFolder = "";
 
-        public static MediaSearch Create(string rootPath = "")
+        public static MediaSearch Create(string azureApiKey, MediaServicesAuth azureMediaServicesAuth, string rootPath = "")
         {
             var setBasePath = string.IsNullOrWhiteSpace(rootPath) ? Environment.CurrentDirectory : rootPath;
             var setMediaFolder = $"{setBasePath}{Path.DirectorySeparatorChar}Media";
@@ -36,6 +36,8 @@ namespace AzureSearch
 
             return new MediaSearch 
             { 
+                apiKey = azureApiKey,
+                mediaServicesAuth = azureMediaServicesAuth,
                 basePath = setBasePath,
                 mediaFolder = setMediaFolder,
                 mediaOutputFolder = setMediaOutputFolder,
@@ -45,7 +47,6 @@ namespace AzureSearch
 
         private MediaSearch()
         {
-            mediaServicesAuth = JsonConvert.DeserializeObject<MediaServicesAuth>(File.ReadAllText($"{AzureCredentialsPath}/media.private-azure-key"));
         }
 
         public string TTML(string rootFolder, string fileName) => File.ReadAllText($"{rootFolder}{mediaFolderWithoutRoot}{fileName}{Path.DirectorySeparatorChar}transcript.ttml");

@@ -1,17 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using AzureSearch;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using WebApp.Hubs;
 
 namespace WebApp.Controllers
@@ -24,17 +20,20 @@ namespace WebApp.Controllers
         private readonly ISearchService _service;
 
          private readonly IHubContext<SearchHub> _hub;
+        private readonly IAzureCredentials _azureCredentials;
 
-        public SearchController(ISearchService service, IHubContext<SearchHub> hub)
+        public SearchController(ISearchService service, IHubContext<SearchHub> hub, IAzureCredentials azureCredentials)
         {
             _service = service;
             _hub = hub;
+            _azureCredentials = azureCredentials;
         }
 
         [HttpGet("{filename}.ttml")]
         public IActionResult TTML(string fileName)
         {
-            var media = MediaSearch.Create().TTML(_baseFolder, fileName);
+            var media = MediaSearch.Create(_azureCredentials.ApiKey, _azureCredentials.MediaServicesAuth)
+                                    .TTML(_baseFolder, fileName);
 
             return File(Encoding.UTF8.GetBytes(media), "application/ttml+xml");
         }
@@ -42,7 +41,8 @@ namespace WebApp.Controllers
         [HttpGet("{filename}.vtt")]
         public IActionResult VTT(string fileName)
         {
-            var media = MediaSearch.Create().VTT(_baseFolder, fileName);
+            var media = MediaSearch.Create(_azureCredentials.ApiKey, _azureCredentials.MediaServicesAuth)
+                                    .VTT(_baseFolder, fileName);
 
             return File(Encoding.UTF8.GetBytes(media), "text/vtt");
         }
@@ -50,7 +50,8 @@ namespace WebApp.Controllers
         [HttpGet("[action]/{filename}")]
         public IActionResult Transcript(string fileName)
         {
-            var transcript = MediaSearch.Create().Transcript(_baseFolder, fileName);
+            var transcript = MediaSearch.Create(_azureCredentials.ApiKey, _azureCredentials.MediaServicesAuth)
+                                        .Transcript(_baseFolder, fileName);
 
             return Ok(transcript);
         }
@@ -75,7 +76,8 @@ namespace WebApp.Controllers
                 using (MemoryStream output = new MemoryStream())
                 {
                     source.CopyTo(output);
-                    await FileSearch.Create().UploadFileToStorage(filename, output.ToArray());
+                    await FileSearch.Create(_azureCredentials.ApiKey, _azureCredentials.StorageKey)
+                                            .UploadFileToStorage(filename, output.ToArray());
                 }
             }
             return Ok();            
