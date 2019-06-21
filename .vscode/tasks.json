@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/AzureSearch/AzureSearch.csproj"
+                "${workspaceFolder}/ConsoleApp/ConsoleApp.csproj"
             ],
             "problemMatcher": "$tsc"
         },

@@ -6,14 +6,15 @@ namespace AzureSearch
 {
     public static class CombinedSearchExtensions
     {
-        public static IEnumerable<CombinedSearch> ApplyIndex(this IEnumerable<CombinedSearch> results, int startingIndex = 0) => results.Select((value, i) => { value.Id = i + startingIndex; return value; });
+        public static IEnumerable<CombinedSearch> ApplyIndex(this IEnumerable<CombinedSearch> results, int startingIndex = 0) => results.Select((value, i) => { value.Index = i + startingIndex; return value; });
 
         public static List<CombinedSearch> ToCombinedSearch(this DocumentSearchResult<SearchIndex> results)
         {
             var search = new List<CombinedSearch>();
             foreach (var item in results.Results)
             {
-                search.Add(new CombinedSearch(item.Document.Name, 
+                search.Add(new CombinedSearch(item.Document.Id, 
+                                            item.Document.Name, 
                                             item.Document.DataType == "Object" ? item.Document.Model : item.Document.DataType, 
                                             item.Document.ToFriendlyFileType(), 
                                             item.Document.DataType.ToSearchType(), 

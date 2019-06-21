@@ -75,52 +75,53 @@ Select option to continue:");
             var apiKey = File.ReadAllText($"{AzureCredentialsPath}/search.private-azure-key"); 
             var mediaServicesAuth =  JsonConvert.DeserializeObject<MediaServicesAuth>(File.ReadAllText($"{AzureCredentialsPath}/media.private-azure-key")); 
             var storageKey = File.ReadAllText($"{AzureCredentialsPath}/storage.private-azure-key");
+            var rootPath = "../AzureSearch";
             switch (ReadLine())
             {
                 case "1":
                     SearchService
-                            .Create(apiKey, mediaServicesAuth)
+                            .Create(apiKey, storageKey, mediaServicesAuth)
                             .StartSearch();
                     break;
                 case "2":
                     await TextSearch
-                            .Create(apiKey)
+                            .Create(apiKey, rootPath)
                             .Index();
                     await FileSearch
-                            .Create(apiKey, storageKey)
+                            .Create(apiKey, storageKey, rootPath)
                             .Index();
                     await MediaSearch
-                            .Create(apiKey, mediaServicesAuth)
+                            .Create(apiKey, mediaServicesAuth, rootPath)
                             .Index();
                     break;
                 case "3":
                     await TextSearch
-                            .Create(apiKey)
+                            .Create(apiKey, rootPath)
                             .Index();
                     break;
                 case "4":
                     await FileSearch
-                            .Create(apiKey, storageKey)
+                            .Create(apiKey, storageKey, rootPath)
                             .Index();
                     break;
                 case "5":
                     await MediaSearch
-                            .Create(apiKey, mediaServicesAuth)
+                            .Create(apiKey, mediaServicesAuth, rootPath)
                             .Index();
                     break;
                 case "6":
                     await MediaSearch
-                            .Create(apiKey, mediaServicesAuth)
+                            .Create(apiKey, mediaServicesAuth, rootPath)
                             .AnalyseMediaAssets();
                     break;
                 case "7":
                     await FileSearch
-                            .Create(apiKey, storageKey)
+                            .Create(apiKey, storageKey, rootPath)
                             .UploadFileToStorage();
                     break;
                 case "99":
                     await FileSearch
-                            .Create(apiKey, storageKey)
+                            .Create(apiKey, storageKey, rootPath)
                             .Delete();
                     break;
                 default:

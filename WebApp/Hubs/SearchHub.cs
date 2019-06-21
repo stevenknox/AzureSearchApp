@@ -14,7 +14,7 @@ namespace WebApp.Hubs
         public SearchHub(ISearchService service, IAzureCredentials azureCredentials)
         {
             _azureCredentials = azureCredentials;
-            _service = service.ConfigureCredentials(azureCredentials.ApiKey, azureCredentials.MediaServicesAuth);
+            _service = service.ConfigureCredentials(azureCredentials.ApiKey, azureCredentials.StorageKey, azureCredentials.MediaServicesAuth);
         }
         public async Task Search(string term)
         {

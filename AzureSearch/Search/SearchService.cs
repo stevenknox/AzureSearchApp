@@ -16,21 +16,22 @@ namespace AzureSearch
     {
         DocumentSearchResult<SearchIndex> Search(string query, string filter = "");
         Task Reindex(string basePath, Action<string> onEventAdded);
-        SearchService ConfigureCredentials(string azureApiKey, MediaServicesAuth azureMediaServicesAuth);
+        SearchService ConfigureCredentials(string azureApiKey, string azureStorageKey, MediaServicesAuth azureMediaServicesAuth);
     }
     public class SearchService : SearchBase, ISearchService
     {
         private static readonly int indexOffset = 1;
         private IDisposable eventAddedSubscription;
 
-        public static SearchService Create(string azureApiKey, MediaServicesAuth azureMediaServicesAuth) 
+        public static SearchService Create(string azureApiKey, string azureStorageKey, MediaServicesAuth azureMediaServicesAuth) 
         { 
-            return new SearchService().ConfigureCredentials(azureApiKey , azureMediaServicesAuth);
+            return new SearchService().ConfigureCredentials(azureApiKey , azureStorageKey, azureMediaServicesAuth);
         }
 
-        public SearchService ConfigureCredentials(string azureApiKey, MediaServicesAuth azureMediaServicesAuth) 
+        public SearchService ConfigureCredentials(string azureApiKey, string azureStorageKey, MediaServicesAuth azureMediaServicesAuth) 
         { 
             apiKey = azureApiKey; 
+            storageKey = azureStorageKey;
             mediaServicesAuth = azureMediaServicesAuth; 
             return this; 
         }
@@ -43,6 +44,8 @@ namespace AzureSearch
         public void StartSearch()
         {
             WriteLine($"Enter Your Search Query:");
+
+            var basePath = "../AzureSearch";
 
             var query = ReadLine();
 
@@ -60,7 +63,7 @@ namespace AzureSearch
             ResetColor();
 
             var table = results.ToStringTable(
-                u => u.Id,
+                u => u.Index,
                 u => u.Name,
                 u => u.DisplayType
             );

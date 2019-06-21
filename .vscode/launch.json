@@ -9,9 +9,9 @@
         "type": "coreclr",
         "request": "launch",
         "preLaunchTask": "build",
-        "program": "${workspaceFolder}/AzureSearch/bin/Debug/netcoreapp2.2/AzureSearch.dll",
+        "program": "${workspaceFolder}/ConsoleApp/bin/Debug/netcoreapp2.2/ConsoleApp.dll",
         "args": [],
-        "cwd": "${workspaceFolder}/AzureSearch",
+        "cwd": "${workspaceFolder}/ConsoleApp",
         "console": "externalTerminal",
         "stopAtEntry": false
     },

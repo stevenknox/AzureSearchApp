@@ -60,7 +60,7 @@ connection.on("resultsReceived", (res: SearchResult[]) => {
     let result = "";
     
     results.forEach(element => {
-        result += `<tr data-index-number=${element.id} class='select-result'><td>${element.id}</td><td>${element.name}</td><td>${element.displayType}</td></tr>`;
+        result += `<tr data-index-number=${element.index} class='select-result'><td>${element.index}</td><td>${element.name}</td><td>${element.displayType}</td></tr>`;
     });
     
     m.innerHTML = result;
